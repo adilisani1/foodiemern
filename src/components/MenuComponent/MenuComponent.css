@@ -1,0 +1,73 @@
+.all-dishes {
+    padding: 10rem 0;
+}
+
+.cards {
+    width: 300px;
+
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 1.8rem 2.5rem;
+    text-align: center;
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.img {
+    width: 200px;
+}
+
+.cards .card-img-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -8rem;
+}
+
+.card-data {
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calories {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 1rem 0 1rem;
+
+}
+
+.calories p:nth-child(1) {
+    font-size: 1.3rem;
+
+}
+
+.calories p:nth-child(2) {
+    font-size: 1.3rem;
+}
+
+.price span:nth-child(1) {
+    font-size: 2rem;
+}
+
+.price span:nth-child(2) {
+    font-size: 2rem;
+    height: 3rem;
+    width: 3rem;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #FF416C, #FF4B2B);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* background: linear-gradient(to right, #ED213A, #93291E);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
