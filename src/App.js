@@ -7,7 +7,7 @@ import Menu from "./pages/Menu/Menu";
 import Contact from "./pages/Contact/Contact";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import MenuComponent from "./components/MenuComponent/MenuComponent";
+// import MenuComponent from "./components/MenuComponent/MenuComponent";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <Navbar />
           <div>
             <Routes >
-              <Route exact path="/" element={(<><Home /><MenuComponent /></>)} />
+              <Route exact path="/" element={(<Home />)} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/menu" element={<Menu />} />
               <Route exact path="/contact" element={<Contact />} />
