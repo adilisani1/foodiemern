@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "Burger One",
+        "price": 6.99,
+        "category": "burgers",
+        "image": "/images/dish/burger-5.png"
+    },
+    {
+        "id": 2,
+        "title": "Burger Two",
+        "price": 10.99,
+        "category": "burgers",
+        "image": "/images/dish/burger-3.png"
+    },
+    {
+        "id": 3,
+        "title": "Burger Three",
+        "price": 5.99,
+        "category": "burgers",
+        "image": "/images/dish/burger-4.png"
+    },
+    {
+        "id": 4,
+        "title": "Pizza One",
+        "price": 12.95,
+        "category": "pizza",
+        "image": "/images/dish/pizza-1.png"
+    },
+    {
+        "id": 5,
+        "title": "Pizza Two",
+        "price": 20.95,
+        "category": "pizza",
+        "image": "/images/dish/pizza-2.png"
+    },
+    {
+        "id": 6,
+        "title": "Pizza Three",
+        "price": 15.95,
+        "category": "pizza",
+        "image": "/images/dish/pizza-1.png"
+    }
+]

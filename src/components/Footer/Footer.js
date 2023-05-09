@@ -10,7 +10,8 @@ const Footer = () => {
       <div className='footer-top'>
         <div className='container'>
           <div className='row justify-content-center'>
-            <div className='col-md-3'>
+
+            <div className='col-md-3 col-lg-3'>
               <div className='opening-hours'>
                 <h3>Opening Hours</h3>
                 <ul >
@@ -23,7 +24,7 @@ const Footer = () => {
 
 
 
-            <div className='col-md-6  '>
+            <div className='col-md-6 col-lg-6 '>
               <div className='stay-in-touch '>
                 <h3>Lets Stay In Touch</h3>
                 <p>Join our e-club to get the latest news</p>
@@ -38,10 +39,8 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className='offset-0 col-md-2 offset-md-1 d-flex justify-content-center '>
+            <div className='col-md-3 col-lg-3 d-flex justify-content-center'>
               <div className='footer-links '>
-
-
                 <h3>Menu Links</h3>
                 <ul>
                   <li>Family Bucket</li>

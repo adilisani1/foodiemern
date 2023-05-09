@@ -15,7 +15,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 4rem;
+    padding: 4rem 2rem;
 }
 
 .opening-hours {
@@ -55,7 +55,7 @@
     padding: 0 2rem;
     border-right: 1px solid #cccccc5b;
     border-left: 1px solid #cccccc5b;
-    padding: 0 10rem;
+    padding: 0 6rem;
 }
 
 .stay-in-touch h3 {
@@ -66,7 +66,7 @@
 }
 
 .stay-in-touch p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-family: var(--Poppins);
     font-weight: 400;
 
@@ -75,6 +75,11 @@
 .footer-links {
     /* border-right: 1px solid #ccc; */
     /* text-align: right; */
+
+    display: flex;
+    flex-direction: column;
+
+
 }
 
 .footer-links h3 {
@@ -132,13 +137,19 @@
     /* margin-left: 10rem;
     margin-right: 0rem; */
     border-radius: 50px;
-    background-color: rgba(208, 181, 0, 0.791);
-    color: black;
+    background-color: var(--btn-color);
+    color: var(--white);
     border: none;
     text-transform: uppercase;
     font-size: 1.4rem;
     font-family: var(--Poppins);
     font-weight: 600;
+
+}
+
+.subscribe .signup-btn:hover {
+    background-color: var(--color-two);
+    color: var(--white);
 
 }
 
@@ -178,5 +189,65 @@
 
     margin: 0rem 0.2rem;
     width: 150px;
+
+}
+
+
+/* Media Query */
+@media screen and (max-width: 990px) {
+
+    .opening-hours {
+        margin-bottom: 2rem;
+    }
+
+    .stay-in-touch {
+        padding: 0 2rem;
+    }
+
+    .stay-in-touch h3 {
+        font-size: 2.2rem;
+    }
+
+    .stay-in-touch p {
+        font-size: 1.2rem;
+
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .stay-in-touch {
+        padding: 0;
+        border: none;
+        text-align: left;
+    }
+
+    .stay-in-touch h3 {
+        font-size: 2.2rem;
+    }
+
+    .stay-in-touch p {
+        font-size: 1.2rem;
+
+    }
+
+    .subscribe .signup-btn {
+        width: 100px;
+        font-size: 1.2rem;
+
+    }
+
+    .stay-in-touch .footer-social-icons .icons {
+
+        padding: 1.4rem;
+        margin: .2rem 1rem;
+        margin-bottom: 1.3rem;
+    }
+
+    .footer-top .d-flex {
+        justify-content: flex-start !important;
+        margin: 1.4rem 0;
+    }
+
+
 
 }

@@ -1,9 +1,14 @@
 import React from 'react';
 import MenuComponent from '../../components/MenuComponent/MenuComponent';
 import './Home.css';
+
 const Home = () => {
+
+
+
     return (
         <>
+
             <section className='hero-wrapper'>
                 <div className='container'>
                     <div className='row rowClass '>
@@ -15,8 +20,8 @@ const Home = () => {
                                 <button className='see-menu-btn'>See Menu</button>
                             </div>
                         </div>
-                        <div className='col-md-6 col-12 col-sm-6 col-lg-6'>
-                            <img src='/images/hero-img-new.png' className='hero-img ' alt="" />
+                        <div className='col-md-6  col-12 col-sm-6 col-lg-5 hero-section-image'>
+                            <img src='/images/herosection-img.png' className='hero-img ' alt="herosection-img" />
                         </div>
 
                     </div>
@@ -26,22 +31,25 @@ const Home = () => {
 
 
             <div className='container'>
-                <div className='row col-12 categories align-items-center'>
+                <div className='row categories '>
 
                     <div className='col-2'>
-                        <img className='cat-icon' src='/images/caticons/burger-icon.svg' />
+                        <img className='cat-icon' src='/images/burger-r.png' alt='' />
                     </div>
                     <div className='col-2'>
-                        <img className='cat-icon' src='/images/caticons/fries.icon.svg' />
+                        <img className='cat-icon' src='/images/noodle-r.png' alt='' />
                     </div>
                     <div className='col-2'>
-                        <img className='cat-icon' src='/images/caticons/pizza-icon.svg' />
+                        <img className='cat-icon' src='/images/pizza-r.png' alt='' />
                     </div>
                     <div className='col-2'>
-                        <img className='cat-icon' src='/images/caticons/dessert.icon.svg' />
+                        <img className='cat-icon' src='/images/fries-r.png' alt='' />
                     </div>
                     <div className='col-2'>
-                        <img className='cat-icon' src='/images/caticons/broast-icon.svg' />
+                        <img className='cat-icon' src='/images/desert-r-1.png' alt='' />
+                    </div>
+                    <div className='col-2'>
+                        <img className='cat-icon' src='/images/drinks-r.png' alt='' />
                     </div>
 
                 </div>

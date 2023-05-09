@@ -12,7 +12,7 @@
   --Rubik: "Rubik", cursive;
   --Patua: "Patua One", cursive;
   --Lobster: "lobster", cursive;
-  --Poppins: 'Poppins', saxns-serif;
+  --Poppins: 'Poppins', sans-serif;
   --Montserrat: 'Montserrat', sans-serif;
   --DM-Serif: 'DM Serif Display', serif;
   --Raleway: 'Raleway', sans-serif;
@@ -22,17 +22,15 @@
   --text-color: #ccad78;
   --white: #FFFFFF;
   --card-bg: #1E1E1E;
-  /* --card-hover-bg: #D79741; */
-  /* --card-hover-bg: #FF7B5F; */
   --color-two: #d93d00;
   --bg-color-one: #8973af;
   --bg-color-two: #574482;
   --bg-color-three: #322e38;
   --btn-color: #FF7B5F;
   --text-black: #000000;
+
   /* #8973AF */
   /* #574482 */
-
   /* Button #FF7B5F*/
 }
 
@@ -45,9 +43,8 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   line-height: 1.6;
-  /* text-rendering: optimizeLegibility !important; */
   background: #f3f3f5;
 
 }

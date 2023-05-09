@@ -3,8 +3,10 @@ section {
 
 }
 
+
+
 .hero-wrapper {
-    height: 80vh;
+    height: 85vh;
     width: 100%;
     /* background-color:#d7e5e5; */
     /* background: linear-gradient(to right, #D7E5E5, #dfdede); */
@@ -19,7 +21,7 @@ section {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
+    /* background-image: url("/public/images/dish/waves.svg") */
 }
 
 
@@ -100,20 +102,29 @@ section {
     color: var(--white);
 }
 
-.hero-img {
-    /* width: 750px; */
-    max-width: 100%;
-
+.hero-section-image {
+    position: relative;
 }
+
+.hero-section-image .hero-img {
+    /* width: 750px; */
+    width: 600px;
+    max-width: 100%;
+}
+
+
 
 .categories {
     /* display: flex; */
     /* justify-content: space-between; */
     display: flex;
     justify-content: space-between;
-    margin: 1.5rem auto 2rem;
+    margin-top: .5rem;
+    margin-bottom: 8rem;
+    align-items: center;
     text-align: center;
-    height: 15vh;
+    padding: 1.2rem 0;
+
 
 
 }

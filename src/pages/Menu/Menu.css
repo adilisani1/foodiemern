@@ -4,8 +4,9 @@ section {
 }
 
 .menu-wrapper {
-    height: 80vh;
+    height: 70vh;
     width: 100%;
+    margin-bottom: 10rem;
     /* background-color:#d7e5e5; */
     /* background: linear-gradient(to right, #D7E5E5, #dfdede); */
     display: flex;
@@ -20,7 +21,7 @@ section {
 
 .menu-wrapper::after {
     position: absolute;
-    height: 80vh;
+    height: 70vh;
     width: 100%;
     content: "";
     left: 0;
