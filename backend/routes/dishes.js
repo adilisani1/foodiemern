@@ -5,17 +5,17 @@ const bodyParser = require('body-parser');
 // const dishesJSON = require('../../src/dishes.json');
 
 // Single routing
-const router = express.Router();
+const dishRouter = express.Router();
 
 const app = express()
 app.use(bodyParser.json())
 
-router.get("/dishes", async (req, res) => {
+dishRouter.get("/dishes", async (req, res) => {
     const dishes = await Dishes.find({})
     res.send(dishes)
 })
 
-router.post('/dishes', async (req, res, next) => {
+dishRouter.post('/dishes', async (req, res, next) => {
     try {
         const dishes = await Dishes.create(req.body);
         const saveDish = await dishes.save();
@@ -25,7 +25,7 @@ router.post('/dishes', async (req, res, next) => {
     }
 });
 
-router.delete('/dishes/:id', async (req, res, next) => {
+dishRouter.delete('/dishes/:id', async (req, res, next) => {
     try {
         const deletedDish = await Dishes.findByIdAndRemove(req.params.id);
         if (!deletedDish) {
@@ -38,4 +38,4 @@ router.delete('/dishes/:id', async (req, res, next) => {
     }
 });
 
-module.exports = router;
+module.exports = dishRouter;
