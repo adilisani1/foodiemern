@@ -1,0 +1,282 @@
+.modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 500px;
+    height: 100%;
+    /* transform: translate3d(100%, 0, 0); */
+    right: 0;
+    top: 0;
+    transform: translateX(100%) !important;
+
+}
+
+.modal.show .modal-dialog {
+    transform: translateX(0%) !important;
+    transition: transform 0.3s ease-out;
+
+}
+
+
+.modal-header {
+    border-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+
+}
+
+.modal-header .modal-close {
+    font-size: 1.8rem;
+    color: #7e7c7c;
+}
+
+.modal-header h4 {
+    font-size: 2.5rem;
+    font-family: var(--Poppins);
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.scrollable-modal-content {
+    position: relative;
+    width: calc(100% - 32px);
+    height: calc(100% - 204px);
+    overflow-y: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+
+/* .scrollable-modal-content {} */
+.view-cart {
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    /* width: 5rem; */
+    display: inherit;
+    background-color: var(--color-two);
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    align-items: center;
+    font-family: var(--Poppins);
+    font-size: 1.7rem;
+    justify-content: center;
+}
+
+.view-cart:hover {
+    background-color: var(--btn-color);
+
+}
+
+.cart-items-container {
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+}
+
+.item-details img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-qty {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.add-sub {
+    margin: 0 5px;
+}
+
+.item-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cart-product-price {
+    margin-bottom: 5px;
+}
+
+
+.price-wrapper {
+    display: flex;
+    align-items: center;
+
+}
+
+.price-wrapper .price {
+    font-size: 2rem;
+    margin-right: 1rem;
+    font-weight: 600;
+    font-family: var(--Poppins);
+}
+
+
+
+
+
+
+/* Table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+td:first-child,
+th:first-child {
+    width: 30%;
+}
+
+td:nth-child(2),
+th:nth-child(2) {
+    width: 20%;
+}
+
+td:last-child,
+th:last-child {
+    text-align: right;
+    width: 20%;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+td:first-child img {
+    margin-right: 10px;
+    max-width: 80px;
+    height: auto;
+}
+
+
+.card {
+    border: none;
+    margin-bottom: 4rem;
+}
+
+.cart-card {
+    background-color: #eee;
+    padding: 1rem 1rem;
+    border-radius: 15px;
+}
+
+.cart-card .cart-card-body {}
+
+.cart-card-body img {
+    width: 80px;
+}
+
+.cart-card-body .cart-product-wrapper {}
+
+.cart-product-wrapper .cart-product-title {
+    font-size: 1.4rem;
+    font-family: var(--Poppins);
+    text-transform: uppercase;
+}
+
+.cart-product-wrapper .cart-qty-wrapper {
+    position: relative;
+
+}
+
+.cart-qty-wrapper .add-sub {
+    border: none;
+    background: none;
+    padding: 0 .6rem;
+}
+
+.cart-qty-wrapper .cart-product-qty {
+    padding: .3rem .8rem;
+    border: 1px solid #eee;
+}
+
+.cart-product-price {
+    font-family: var(--Poppins);
+    font-size: 1.6rem;
+}
+
+.delete-cart-item {
+    display: flex;
+    align-self: flex-end;
+}
+
+.delete-cart-icon {
+    font-size: 2rem !important;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.delete-cart-icon:hover {
+
+    color: var(--color-two)
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    td:first-child,
+    th:first-child {
+        width: 50%;
+    }
+
+    td:nth-child(2),
+    th:nth-child(2) {
+        width: 0%;
+        display: none;
+    }
+
+    td:last-child,
+    th:last-child {
+        text-align: left;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .modal-dialog {
+
+        width: 100%;
+
+
+    }
+}
