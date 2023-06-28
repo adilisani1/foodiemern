@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const dishRouter = require('./routes/dishes');
+const dishRouter = require('./routes/dishesRouter');
 const cors = require('cors')
 const app = express();
 const port = 5000;
