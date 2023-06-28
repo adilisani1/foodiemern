@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 
-const dishesSchema = new mongoose.Schema({
+const Dishes = new mongoose.Schema({
     title: {
         type: String,
-        required: true
     },
     price: {
         type: Number,
@@ -20,5 +19,5 @@ const dishesSchema = new mongoose.Schema({
 }, {
     timestamps: true
 })
-const Dishes = mongoose.model("Dish", dishesSchema)
-module.exports = Dishes;
+
+module.exports = mongoose.model("Dish", Dishes);
