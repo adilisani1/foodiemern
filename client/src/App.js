@@ -23,7 +23,7 @@ function App() {
   //Api
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/dishes');
+      const response = await axios.get('http://localhost:5000/api/dishes');
       setDishes(response.data);
 
     } catch (error) {
