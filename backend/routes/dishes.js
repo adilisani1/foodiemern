@@ -1,8 +1,8 @@
 const express = require('express');
-const Dishes = require('../models/dishes');
+const Dishes = require('../models/dishes')
 
 const dishRouter = express.Router();
-const dishesJson = require('../../client/src/dishes.json');
+// const dishesJson = require('../../client/src/dishes.json');
 
 dishRouter.get("/dishes", async (req, res) => {
     try {
