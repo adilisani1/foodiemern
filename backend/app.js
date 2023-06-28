@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 
-const uri = process.env.MONGODB_URI;
+const uri = "mongodb+srv://adil:aadil%400321@cluster0.1ijveb9.mongodb.net/foodapplication";
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("DBConnection Successfull"))
     .catch((err) => console.log(err))
