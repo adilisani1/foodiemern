@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Dishes = new mongoose.Schema({
     title: {
         type: String,
+        required: true
     },
     price: {
         type: Number,
