@@ -9,15 +9,15 @@
     "routes": [
         {
             "src": "/dishes",
-            "dest": "/server.js"
+            "dest": "/app.js"
         },
         {
             "src": "/contact",
-            "dest": "/server.js"
+            "dest": "/app.js"
         },
         {
             "src": "/auth",
-            "dest": "/server.js"
+            "dest": "/app.js"
         }
     ]
 }
