@@ -7,9 +7,8 @@ const dishRouter = express.Router();
 dishRouter.get("/dishes", async (req, res) => {
     try {
         const dishes = await Dishes.find({});
-        res.json(dishes);
+        res.status(201).json(dishes);
     } catch (error) {
-        console.log(error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
@@ -18,9 +17,9 @@ dishRouter.post('/dishes', async (req, res) => {
     try {
         const dishes = await Dishes.create(req.body);
         const saveDish = await dishes.save();
-        res.json(saveDish);
+        res.status(201).json(saveDish);
     } catch (error) {
-        console.log(error);
+
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
@@ -31,9 +30,9 @@ dishRouter.delete('/dishes/:id', async (req, res) => {
         if (!deletedDish) {
             return res.status(404).json({ error: 'Dish not found' });
         }
-        res.json(deletedDish);
+        res.status(201).json(deletedDish);
     } catch (error) {
-        console.log(error);
+
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
