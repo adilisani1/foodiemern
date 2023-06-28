@@ -1,5 +1,5 @@
 const express = require('express');
-const Dishes = require('../models/Dishes');
+const Dishes = require('../models/dishes');
 
 const dishRouter = express.Router();
 
@@ -37,4 +37,4 @@ dishRouter.delete('/dishes/:id', async (req, res) => {
     }
 });
 
-module.exports = dishRouter;
+module.exports = dishRouter
