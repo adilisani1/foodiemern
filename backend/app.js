@@ -23,7 +23,7 @@ app.use(express.json());
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use("/", dishRouter);
+app.use("/api", dishRouter);
 app.use("/user", userRouter);
 app.use("/api", contactRouter);
 
