@@ -12,7 +12,7 @@ const app = express();
 const PORT = 5000;
 const uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri)
     .then(() => console.log("DBConnection Successfull"))
     .catch((err) => console.log(err));
 
