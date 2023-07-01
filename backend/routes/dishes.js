@@ -12,7 +12,7 @@ dishRouter.get("/dishes", async (req, res, next) => {
     }
 });
 
-dishRouter.post('/dishes', async (req, res, next) => {
+dishRouter.post("/dishes", async (req, res, next) => {
     try {
         const dish = new Dishes(req.body);
         const savedDish = await dish.save();
