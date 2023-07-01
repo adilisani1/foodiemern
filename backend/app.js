@@ -7,10 +7,11 @@ const dishRouter = require('./routes/dishes');
 // const contactRouter = require('./routes/contact');
 
 require('dotenv').config();
-const app = express();
 
 const PORT = 5000;
 const uri = process.env.MONGODB_URI;
+
+const app = express();
 
 mongoose.connect(uri)
     .then(() => console.log("DBConnection Successfull"))
