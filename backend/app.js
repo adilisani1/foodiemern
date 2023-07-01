@@ -1,19 +1,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
+const PORT = 5000;
+require('dotenv').config();
 const dishRouter = require('./routes/dishes');
 // const userRouter = require('./routes/auth');
 // const contactRouter = require('./routes/contact');
 
-require('dotenv').config();
 
-const PORT = 5000;
-const uri = process.env.MONGODB_URI;
+
+// const uri = process.env.MONGODB_URI;
 
 const app = express();
 
-mongoose.connect(uri)
+mongoose.connect("mongodb+srv://adil:aadil%400321@cluster0.1ijveb9.mongodb.net/foodapplication")
     .then(() => console.log("DBConnection Successfull"))
     .catch((err) => console.log(err));
 
