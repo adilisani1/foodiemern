@@ -26,5 +26,5 @@ app.use("/api", dishRouter);
 // app.use("/api", contactRouter);
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
+    console.log(`Server is running on port http://localhost:${PORT}`)
 });
