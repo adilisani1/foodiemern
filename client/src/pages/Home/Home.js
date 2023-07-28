@@ -8,13 +8,13 @@ const Home = ({ dishes }) => {
     const [catActive, setCatActive] = useState(false);
     const [myDishes, setMyDishes] = useState([]);
 
-    const [activeDish, setActiveDish] = useState(false)
+    // const [activeDish, setActiveDish] = useState(false)
 
     const filterItem = (category) => {
         const updatedList = dishes.filter((item) => item.category === category);
         setMyDishes(updatedList);
         setCatActive(category);
-        setActiveDish(category)
+        // setActiveDish(category)
 
     };
 
@@ -73,7 +73,7 @@ const Home = ({ dishes }) => {
             {/* <!-- End Hero Section --> */}
 
 
-            <div className='container-tabs'>
+            {/* <div className='container-tabs'>
                 <div className='row categories'>
                     {categories.map((category, index) => (
                         <div className={`col-2 cat ${catActive === category ? 'active' : ''}`} key={index}>
@@ -86,9 +86,24 @@ const Home = ({ dishes }) => {
                         </div>
                     ))}
                 </div>
+            </div> */}
+            <div className='container-tabs'>
+                <div className='row categories'>
+                    {categories.map((category, index) => (
+                        <div className={`col-2 cat ${catActive === category ? 'active' : ''}`} key={index}>
+                            <img
+                                className="cat-icon"
+                                src={`/images/${category}-r.png`}
+                                alt=""
+                                onClick={() => filterItem(category)}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
 
-            <MenuComponent dishes={dishes} />
+
+            <MenuComponent dishes={myDishes} />
         </>
     )
 }

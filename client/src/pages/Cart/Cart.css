@@ -34,6 +34,7 @@
     font-size: 2.5rem;
     font-family: var(--Poppins);
     font-weight: 500;
+    margin-bottom: 0;
 }
 
 .scrollable-modal-content {
@@ -268,5 +269,14 @@ td:first-child img {
     th:last-child {
         text-align: left;
         width: 50%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .modal-dialog {
+
+        width: 100%;
+
+
     }
 }

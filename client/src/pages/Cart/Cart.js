@@ -25,6 +25,10 @@ function Cart({ toggle, modal }) {
   }, 0);
 
   // const qtyItems = cartItems.map((item) => item.qty)
+  const qtyItems = cartItems.reduce((totalQty, item) => {
+    return totalQty + item.qty;
+  }, 0);
+
 
 
   // const orderTotal = cartItems.reduce((total, item) => total + item.price * item.qty, 0);
@@ -45,7 +49,7 @@ function Cart({ toggle, modal }) {
         <div className='modal-header'>
           <h4>Your Cart</h4>
           <div className='price-wrapper'>
-            {/* <span className='price'>{`${cartItems.length > 0 ? `${qtyItems} items` : ""}`}</span> */}
+            <span className='price'>{`${cartItems.length > 0 ? `${qtyItems} items` : ""}`}</span>
             <CloseOutlinedIcon className='modal-close' onClick={toggle} />
           </div>
         </div>

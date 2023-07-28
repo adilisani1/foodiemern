@@ -8,9 +8,12 @@ const Checkout = ({ viewCartModal, toggleViewCart }) => {
 
         <div >
             <Modal isOpen={viewCartModal} toggle={toggleViewCart} fullscreen>
+                <ModalHeader>Checkout page</ModalHeader>
                 <ModalBody>
-                    <ModalHeader>Checkout page</ModalHeader>
-                    <ModalFooter>Abc</ModalFooter>
+
+
+                    <h5>IN PROGRESS</h5>
+
                 </ModalBody>
             </Modal>
         </div>

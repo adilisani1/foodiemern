@@ -15,6 +15,7 @@ import { Route, Routes } from 'react-router-dom';
 //Dishes 
 // import Dishes from './dishes.json';
 import Checkout from './pages/Checkout/Checkout';
+import CustomerSlider from './components/CustomerSlider/CustomerSlider';
 
 
 function App() {
@@ -38,12 +39,13 @@ function App() {
   return (
     <div className="App">
       <>
-
+        {/* <CustomerSlider /> */}
         <Navbar />
         <div>
 
           <Routes >
             <Route exact path="/" element={<Home dishes={dishes} />} />
+
             <Route exact path="/menu/:id" element={<DishDetails singleDish={dishes} headerColor="#4d38b2" />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/checkout" element={<Checkout />} />
@@ -54,6 +56,7 @@ function App() {
             <Route exact path="/:id" element={<DishDetails singleDish={dishes} headerColor="#4d38b2" />} />
 
           </Routes>
+
         </div>
         <Footer />
 
