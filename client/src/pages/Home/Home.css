@@ -273,7 +273,21 @@
 
     }
 
+    .banner-text h2 {
+        font-size: 3.5rem;
 
+    }
+
+    .banner-text span {
+
+        font-size: 2rem;
+
+    }
+
+    .banner-text p {
+
+        font-size: 1.2rem;
+    }
 
     .hero .btn-book-a-table {
         font-size: 11px;
@@ -323,13 +337,21 @@
 
 @media screen and (max-width: 425px) {
 
+    .banner-text h2 {
+        font-size: 3rem;
+    }
 
+    .banner-text span {
+        font-size: 2rem;
+    }
+
+    .banner-text p {
+        font-size: 1.2rem;
+    }
 
     .container-tabs .categories {
         margin-top: 8%;
         margin-bottom: 30%;
-
-
 
 
     }
