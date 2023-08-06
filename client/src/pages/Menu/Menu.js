@@ -33,7 +33,7 @@ const Menu = ({ dishes }) => {
 
                 {dishes.map((item) => {
                   return (
-                    <div className="col-lg-4 col-sm-6 dish-box-wp lunch" data-cat="lunch" key={item.id}>
+                    <div className="col-lg-4 col-sm-6 dish-box-wp lunch" data-cat="lunch" key={item._id}>
 
                       <div className="dish-box text-center">
 

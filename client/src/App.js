@@ -25,7 +25,6 @@ function App() {
     try {
       const response = await axios.get('https://foodiemern-apis.vercel.app/api/dishes');
       setDishes(response.data);
-      console.log(response.data)
 
     } catch (error) {
       console.error('Error:', error);
@@ -39,10 +38,8 @@ function App() {
   return (
     <div className="App">
       <>
-
         <Navbar />
         <div>
-
           <Routes >
             <Route exact path="/" element={<Home dishes={dishes} />} />
             <Route exact path="/menu/:id" element={<DishDetails singleDish={dishes} headerColor="#4d38b2" />} />
@@ -53,7 +50,6 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/:id" element={<DishDetails singleDish={dishes} headerColor="#4d38b2" />} />
-
           </Routes>
         </div>
         <Footer />

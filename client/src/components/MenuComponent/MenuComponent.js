@@ -21,7 +21,7 @@ const MenuComponent = ({ dishes }) => {
                             <div className="row g-xxl-5 bydefault_show" id="menu-dish">
 
                                 {dishes.map((item) => {
-                                    return (<div className="col-lg-4 col-sm-6 dish-box-wp lunch" data-cat="lunch">
+                                    return (<div className="col-lg-4 col-sm-6 dish-box-wp lunch" data-cat="lunch" key={item._id}>
 
                                         <div className="dish-box text-center">
 

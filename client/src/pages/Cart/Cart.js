@@ -6,16 +6,14 @@ import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import './Cart.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeCart } from '../../redux/cartSlice';
+import { inCreament, deCreament, removeCart } from '../../redux/cartSlice';
 import Checkout from '../Checkout/Checkout';
 
 
 function Cart({ toggle, modal }) {
 
   const [viewCartModal, setViewCartModal] = useState(false);
-
   const toggleViewCart = () => setViewCartModal(!viewCartModal);
-
 
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
@@ -28,7 +26,6 @@ function Cart({ toggle, modal }) {
   const qtyItems = cartItems.reduce((totalQty, item) => {
     return totalQty + item.qty;
   }, 0);
-
 
 
   // const orderTotal = cartItems.reduce((total, item) => total + item.price * item.qty, 0);
@@ -62,7 +59,7 @@ function Cart({ toggle, modal }) {
                     <div className="card-body p-4">
                       <div className="row">
                         {cartItems.map((item) => (
-                          <div className="col-lg-12" key={item.id}>
+                          <div className="col-lg-12" key={item._id}>
                             <div className="cart-card mb-3">
                               <div className="cart-card-body">
                                 <div className="d-flex flex-row align-items-center justify-content-between">
@@ -75,9 +72,9 @@ function Cart({ toggle, modal }) {
                                     <div className='cart-qty-wrapper'>
                                       <h5 className='cart-product-title'>{item.title}</h5>
                                       <div className='item-qty'>
-                                        <button className='add-sub'>-</button>
+                                        <button className='add-sub' onClick={() => dispatch(deCreament(item))}>-</button>
                                         <span className='cart-product-qty'>{item.qty}</span>
-                                        <button className='add-sub'>+</button>
+                                        <button className='add-sub' onClick={() => dispatch(inCreament(item))}>+</button>
                                       </div>
                                     </div>
                                   </div>
