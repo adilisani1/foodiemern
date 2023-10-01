@@ -143,7 +143,7 @@ const MenuComponent = ({ dishes }) => {
                         <div className='banner-text col-md-6'>
                             <h2 >Get a 20% Discount</h2>
                             <span>Special Food Every Time </span>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. </p>
+                            <p className='center-banner-text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. </p>
                             <div className='d-flex align-items-center'>
                                 <button className='order-now'>Order Now</button>
                                 <h3>$299.00</h3>

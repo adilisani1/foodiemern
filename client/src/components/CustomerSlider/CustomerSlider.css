@@ -64,3 +64,21 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
+
+
+
+@media (max-width: 640px) {
+    .slider-container .slider-wrapper .slider-card .customer-image {
+        height: 120px;
+        width: 120px;
+        margin-top: -5rem;
+    }
+
+    .slider-container .slider-wrapper .slider-card .customer-dec {
+        padding: 1.2rem 0;
+        font-size: 1.3rem;
+        font-family: "Montserrat", sans-serif;
+        width: 90%;
+
+    }
+}
