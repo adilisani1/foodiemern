@@ -12,6 +12,10 @@ const MenuComponent = ({ dishes }) => {
 
     return (
         < >
+
+            <div className='menu-t'>
+                <h2 className='menu-title'>Menu</h2>
+            </div>
             <section
                 className="our-menu section repeat-img" id="menu">
                 <div className="sec-wp">
