@@ -7,7 +7,7 @@ import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlin
 import Cart from '../../pages/Cart/Cart';
 import { useSelector } from 'react-redux';
 
-const Navbar = () => {
+const Navbar = ({ isCartModalOpen, setIsCartModalOpen, toggleViewCart }) => {
 
     const [isActiveHeader, setIsActiveHeader] = useState(false);
     const [showNav, setShowNav] = useState(false);
@@ -31,7 +31,6 @@ const Navbar = () => {
     const toggleNavbar = () => {
         setShowNav(prevState => !prevState);
     };
-
 
 
 
@@ -61,7 +60,7 @@ const Navbar = () => {
                         </ul>
                         <div className='cart-icon' onClick={toggle}>
                             <span className='cart-qty'>{cartItems.length}</span>
-                            <span className='cart'><ShoppingBasketOutlinedIcon /></span>
+                            <span className='cart' onClick={toggleViewCart}><ShoppingBasketOutlinedIcon /></span>
                         </div>
 
                         <div className='sign-buttons'>
@@ -79,7 +78,7 @@ const Navbar = () => {
 
                     <div className='mobile-cart-wrapper' onClick={toggle}>
                         <span className='mobile-cart-qty'>{cartItems.length}</span>
-                        <span className='mobile-cart-icon'><ShoppingBasketOutlinedIcon /></span>
+                        <span className='mobile-cart-icon' onClick={toggleViewCart}><ShoppingBasketOutlinedIcon /></span>
                     </div>
 
                     <div className='mobile-menu' onClick={toggleNavbar}>
@@ -90,8 +89,10 @@ const Navbar = () => {
 
                 </header>
 
-
-                {modal && <Cart modal={modal} toggle={toggle} />}
+                {/* {modal && <Cart modal={modal} setModal={setModal} toggle={toggle} />} */}
+                <Cart
+                    isCartModalOpen={isCartModalOpen}
+                    toggleViewCart={toggleViewCart} setIsCartModalOpen={setIsCartModalOpen} />
             </section >
 
 

@@ -10,7 +10,7 @@ import Login from './components/Form/Login';
 import axios from 'axios';
 
 import Footer from "./components/Footer/Footer";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 //Dishes 
 // import Dishes from './dishes.json';
@@ -18,7 +18,20 @@ import Checkout from './pages/Checkout/Checkout';
 
 
 function App() {
+
   const [dishes, setDishes] = useState([]);
+  const location = useLocation();
+
+  const hideOnRoutes = ['/checkout'];
+  const showNavAndFooter = !hideOnRoutes.includes(location.pathname);
+
+
+  //CartModal Toggle
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+  const toggleViewCart = () => {
+
+    setIsCartModalOpen(true)
+  }
 
   //Api
   const fetchData = async () => {
@@ -35,10 +48,16 @@ function App() {
     fetchData();
   }, []);
 
+
+
+
   return (
     <div className="App">
       <>
-        <Navbar />
+        {showNavAndFooter && <Navbar
+          toggleViewCart={toggleViewCart}
+          isCartModalOpen={isCartModalOpen}
+          setIsCartModalOpen={setIsCartModalOpen} />}
         <div>
           <Routes >
             <Route exact path="/" element={<Home dishes={dishes} />} />
@@ -52,7 +71,7 @@ function App() {
             <Route exact path="/:id" element={<DishDetails singleDish={dishes} headerColor="#4d38b2" />} />
           </Routes>
         </div>
-        <Footer />
+        {showNavAndFooter && <Footer />}
 
 
 

@@ -8,6 +8,7 @@ section {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     background: rgb(137, 115, 175);
     background: radial-gradient(circle, rgba(137, 115, 175, 1) 0%, rgba(87, 68, 130, 1) 50%, rgba(50, 46, 56, 1) 100%);
     background-size: cover;
@@ -21,8 +22,9 @@ section {
 }
 
 .form-bg .formCard {
-    padding: 5rem 0;
-    width: 800px;
+    padding: 5rem 4rem;
+    max-width: 100%;
+    width: 600px;
     border-radius: 30px;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -104,13 +106,19 @@ section {
 }
 
 @media screen and (max-width: 990px) {
-    .form-bg .formCard {
+
+    /* .form-bg .formCard {
         width: 600px;
 
-    }
-
+    } */
+    /* 
     .formCard .form-sign {
-        width: 80%;
+        width: 100%;
+
+    } */
+    .form-bg .formCard {
+        max-width: 100%;
+
 
     }
 
@@ -118,26 +126,22 @@ section {
 
 @media screen and (max-width: 600px) {
     .form-bg .formCard {
+        max-width: 100%;
+
         width: 400px;
 
     }
 
-    .formCard .form-sign {
-        width: 80%;
-
-    }
 
 }
+
 
 @media screen and (max-width: 425px) {
     .form-bg .formCard {
         width: 300px;
-
+        max-width: 100%;
     }
 
-    .formCard .form-sign {
-        width: 80%;
 
-    }
 
 }

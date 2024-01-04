@@ -6,6 +6,7 @@
     background-size: cover;
     position: relative;
     min-height: 60vh;
+    z-index: 100;
     padding: 130px 0 60px 0;
     background: rgb(137, 115, 175);
     background: radial-gradient(circle, rgba(137, 115, 175, 1) 0%, rgba(87, 68, 130, 1) 50%, rgba(50, 46, 56, 1) 100%);
@@ -179,32 +180,18 @@
 
     }
 
-    /* .hero-section-wrapper .see-menu-btn {
-        width: 120px;
-        padding: 1rem;
-        font-size: 1.2rem;
-
-    } */
-
 
     /* Categories tabs */
-
     .container-tabs {
-        width: 90vw;
+        width: 95vw;
 
     }
-
 
     .container-tabs .categories {
         margin-top: 3%;
         margin-bottom: 12%;
-
         padding: 1%;
-
-
     }
-
-
 
     .categories .cat.active::before {
         width: 90px;
@@ -223,8 +210,6 @@
         text-align: center;
         height: 100vh;
         width: 100%;
-        /* background-color:#d7e5e5; */
-        /* background: linear-gradient(to right, #D7E5E5, #dfdede); */
         display: flex;
         align-items: center;
 
@@ -246,12 +231,6 @@
 
 
 
-    /* .hero-section-wrapper .order-now-btn {
-            padding: 1rem;
-            border: none;
-            font-size: 1.2rem;
-            width: 120px;
-        } */
 
     .hero .hero-title {
         font-size: 3rem;
@@ -307,10 +286,6 @@
     }
 
 
-    .container-tabs {
-        width: 90vw;
-
-    }
 
 
     .container-tabs .categories {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import './Form.css';
 
@@ -94,9 +94,12 @@ const Login = () => {
 
 
                             </div>
-
                             <button type="submit" className="">Sign In</button>
-
+                            <div className='col-12 text-center member'>
+                                {/* <span>Already a member?</span> */}
+                                <a href="/signup">Dont have an Account?</a>
+                                <Link to="/signup" className='push-signin'>Sign Up</Link>
+                            </div>
                         </form>
                     </div>
                 </div>
