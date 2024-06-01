@@ -36,7 +36,7 @@ function App() {
   //Api
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://foodiemern-apis.vercel.app/api/dishes');
+      const response = await axios.get('https://foodiemern-front-end.vercel.app/api/dishes');
       setDishes(response.data);
 
     } catch (error) {
@@ -47,7 +47,6 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
-
 
   useEffect(() => {
     document.body.className = showNav ? 'body-bg' : '';
@@ -79,10 +78,7 @@ function App() {
         </div>
         {showNavAndFooter && <Footer />}
 
-
-
       </>
-
     </div>
   );
 }

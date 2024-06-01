@@ -6,7 +6,6 @@ const User = require('../models/userModal');
 
 userRouter.post('/register', async (req, res) => {
     const { username, email, password } = req.body;
-
     const hashedPassword = await bcrypt.hash(password, 10)
     const newUser = new User({
         username,
@@ -29,8 +28,7 @@ userRouter.post('/login', async (req, res) => {
     })
 
     try {
-        // await newUser.save();
-        // res.send("User Registered successfully");
+
     } catch (error) {
         return res.status(401).json({ message: error })
     }

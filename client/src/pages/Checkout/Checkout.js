@@ -82,7 +82,6 @@ const Checkout = () => {
             dispatch(clearCart())
         }
 
-
     };
 
     function renderCreditCardForm() {
