@@ -7,10 +7,8 @@ import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlin
 import Cart from '../../pages/Cart/Cart';
 import { useSelector } from 'react-redux';
 
-const Navbar = ({ isCartModalOpen, setIsCartModalOpen, toggleViewCart }) => {
-
+const Navbar = ({ showNav, setShowNav, isCartModalOpen, setIsCartModalOpen, toggleViewCart }) => {
     const [isActiveHeader, setIsActiveHeader] = useState(false);
-    const [showNav, setShowNav] = useState(false);
     const [modal, setModal] = useState(false);
     const cartItems = useSelector((state) => state.cart.cartItems);
 

@@ -49,6 +49,19 @@ body {
 
 }
 
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+body.body-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
 /* Updated CSS for body backdrop */
 body.overlay-backdrop {
   position: fixed;

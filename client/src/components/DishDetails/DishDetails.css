@@ -149,3 +149,23 @@
     border-radius: 7px;
     cursor: pointer;
 }
+
+.add-btn-dish {
+    font-size: 1.7rem;
+    background-color: var(--color-two);
+    color: var(--white);
+
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 2rem 0rem;
+}
+
+.add-btn-dish:hover {
+    opacity: 0.8;
+
+}

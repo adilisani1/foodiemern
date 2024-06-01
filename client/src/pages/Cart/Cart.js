@@ -13,7 +13,6 @@ import { useNavigate } from "react-router-dom";
 function Cart({ isCartModalOpen, setIsCartModalOpen }) {
 
   const navigate = useNavigate()
-
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
 

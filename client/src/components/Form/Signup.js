@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-
-
 import './Form.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
@@ -20,11 +18,8 @@ const Signup = () => {
     const handleChange = (event) => {
         const name = event.target.name
         const value = event.target.value
-
         setFormData({ ...formData, [name]: value })
     }
-
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { username, email, password } = formData
@@ -33,7 +28,15 @@ const Signup = () => {
             alert('Please fill in all the details ');
             return;
         }
-        const res = await fetch("http://localhost:5000/user/register", {
+
+
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+        if (!passwordRegex.test(password)) {
+            alert('Password must be at least 6 characters long and include both letters and numbers.');
+            return;
+        }
+
+        const res = await fetch("http://localhost:5000/auth/register", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -55,16 +58,11 @@ const Signup = () => {
                 navigate('/login')
             }, 3000);
             setLoading(false)
-
         }
-
-
     }
-
     if (!loading) {
         return <Loading />
     }
-
     return (
         <>
             <section className='form-bg'>
@@ -107,11 +105,13 @@ const Signup = () => {
                                     onChange={handleChange}
                                 />
 
-
+                                <div id="passwordHelp" class="form-text">
+                                    Password must be at least 6 characters long and include both letters and numbers.
+                                </div>
                             </div>
 
                             <button type="submit" className="">Sign up</button>
-                            <div className='col-12 text-center  member'>
+                            <div className='col-12 text-center member'>
                                 {/* <span>Already a member?</span> */}
                                 <a href="/login">Already a member?</a>
                                 <Link to="/login" className='push-signin'>Sign In</Link>

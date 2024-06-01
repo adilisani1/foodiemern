@@ -22,24 +22,25 @@ export const cartSlice = createSlice({
         },
 
         inCreament: (state, action) => {
-            const exist = state.cartItems.find((item) => item._id === action.payload._id);
-            if (exist) {
-                exist.qty++;
-            } else {
-                state.cartItems.push({ ...action.payload, qty: 1 });
+            const item = state.cartItems.find((item) => item._id === action.payload._id);
+            if (item) {
+                item.qty += 1;
+            }
+        },
+        deCreament: (state, action) => {
+            const item = state.cartItems.find((item) => item._id === action.payload._id);
+            if (item && item.qty > 1) {
+                item.qty -= 1;
+            } else if (item) {
+                state.cartItems = state.cartItems.filter((item) => item._id !== action.payload._id);
             }
         },
 
-        deCreament: (state, action) => {
-            const exist = state.cartItems.find((item) => item._id === action.payload._id);
-            if (exist.qty === 1) {
-                state.cartItems = state.cartItems.filter((item) => item._id !== action.payload._id);
-            } else {
-                state.cartItems.map((item) => item._id === action.payload._id ? { ...exist, qty: exist.qty-- } : item)
-            }
-        },
+        clearCart: (state) => {
+            state.cartItems = []
+        }
     },
 })
-export const { addToCart, removeCart, inCreament, deCreament } = cartSlice.actions
+export const { addToCart, removeCart, inCreament, deCreament, clearCart } = cartSlice.actions
 
 export default cartSlice.reducer
