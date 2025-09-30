@@ -164,232 +164,232 @@ const Checkout = () => {
     };
 
     return (
-        <React.Fragment>
-            <div className='checkout-page-bg'>
-                <div className='checkout-page-bg-inner'>
-                    <div className='back-btn'>
-                        <NavLink to="/">
-                            <KeyboardBackspaceOutlinedIcon className='back-icon' />
-                        </NavLink>
-                    </div>
-                    <div className='place-order'>
-                        <h2 className='place-order-text'>Place your<p>Order</p></h2>
-                    </div>
+      <React.Fragment>
+        <div className="checkout-page-bg">
+          <div className="checkout-page-bg-inner">
+            <div className="back-btn">
+              <NavLink to="/">
+                <KeyboardBackspaceOutlinedIcon className="back-icon" />
+              </NavLink>
+            </div>
+            <div className="place-order">
+              <h2 className="place-order-text">
+                Place your<p>Order</p>
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div className="checkout-page-container">
+          <div className="checkout-page-wrapper">
+            <div className="checkout-page-left">
+              <div className="payment-details">
+                <h4 className="details-title">Billing Details</h4>
+              </div>
+              <form>
+                <div className="mb-4">
+                  <label htmlFor="" className="billing-label">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    value={address.name}
+                    placeholder="Type your name"
+                    className="billing-control"
+                    id="name"
+                    name="name"
+                    required
+                    onChange={handleAdressChange}
+                  />
                 </div>
+                <div className="mb-4">
+                  <label htmlFor="" className="billing-label">
+                    Your Phone
+                  </label>
+                  <input
+                    value={address.phone}
+                    type="phone"
+                    className="billing-control"
+                    id="phone"
+                    name="phone"
+                    required
+                    onChange={handleAdressChange}
+                    placeholder="Type your Phone no"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="" className="billing-label">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    className="billing-control"
+                    value={address.email}
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Type your Email address"
+                    onChange={handleAdressChange}
+                  />
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="" className="billing-label">
+                    Your Full Address
+                  </label>
+                  <input
+                    value={address.address}
+                    type="text"
+                    className="billing-control"
+                    id="address"
+                    required
+                    name="address"
+                    placeholder="Type your Full address"
+                    onChange={handleAdressChange}
+                  />
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="" className="billing-label">
+                    Special Instruction
+                  </label>
+                  <input
+                    value={address.instructions}
+                    type="text-area"
+                    row="4"
+                    className="billing-control"
+                    id="instruction"
+                    name="instruction"
+                    placeholder="Type your Special Instruction here"
+                    onChange={handleAdressChange}
+                  />
+                </div>
+              </form>
             </div>
 
-            <div className='checkout-page-container'>
-                <div className='checkout-page-wrapper'>
+            <div className="checkout-page-right">
+              <div className="payment-details">
+                <h4 className="details-title">Payment</h4>
+              </div>
+              <div className="checkout-payment-bg">
+                <div className="checkout-payment">
+                  <h3>Your Order</h3>
 
-                    <div className='checkout-page-left'>
-                        <div className='payment-details'>
-                            <h4 className='details-title'>Billing Details</h4>
-                        </div>
-                        <form>
-                            <div className="mb-4">
-                                <label htmlFor="" className="billing-label">
-                                    Your Name
-                                </label>
-                                <input
-                                    type="text"
-                                    value={address.name}
-                                    placeholder='Type your name'
-                                    className="billing-control"
-                                    id="name"
-                                    name='name'
-                                    required
-                                    onChange={handleAdressChange}
-                                />
-                            </div>
-                            <div className="mb-4">
-                                <label htmlFor="" className="billing-label">
-                                    Your Phone
-                                </label>
-                                <input
-                                    value={address.phone}
-                                    type="phone"
-                                    className="billing-control"
-                                    id="phone"
-                                    name='phone'
-                                    required
-                                    onChange={handleAdressChange}
-                                    placeholder='Type your Phone no'
-                                />
-                            </div>
-                            <div className="mb-4">
-                                <label htmlFor="" className="billing-label">
-                                    Your Email
-                                </label>
-                                <input
-                                    type="email"
-                                    className="billing-control"
-                                    value={address.email}
-                                    id="email"
-                                    name='email'
-                                    required
-                                    placeholder='Type your Email address'
-                                    onChange={handleAdressChange}
-                                />
-
-                            </div>
-                            <div className="mb-4">
-                                <label htmlFor="" className="billing-label">
-                                    Your Full Address
-                                </label>
-                                <input
-                                    value={address.address}
-                                    type="text"
-                                    className="billing-control"
-                                    id="address"
-                                    required
-                                    name='address'
-                                    placeholder='Type your Full address'
-                                    onChange={handleAdressChange}
-                                />
-                            </div>
-                            <div className="mb-4">
-                                <label htmlFor="" className="billing-label">
-                                    Special Instruction
-                                </label>
-                                <input
-                                    value={address.instructions}
-                                    type="text-area"
-                                    row="4"
-                                    className="billing-control"
-                                    id="instruction"
-                                    name='instruction'
-                                    placeholder='Type your Special Instruction here'
-                                    onChange={handleAdressChange}
-                                />
-                            </div>
-
-
-                        </form>
+                  <div className="order-details">
+                    <div>
+                      <h5>Product</h5>
                     </div>
-
-                    <div className='checkout-page-right'>
-
-                        <div className='payment-details'>
-                            <h4 className='details-title'>Payment</h4>
-                        </div>
-                        <div className='checkout-payment-bg'>
-
-                            <div className='checkout-payment'>
-                                <h3>Your Order</h3>
-
-                                <div className='order-details'>
-                                    <div>
-                                        <h5>Product</h5>
-                                    </div>
-                                    <div>
-                                        <h5>Subtotal</h5>
-                                    </div>
-                                </div>
-
-
-                                {cartItems.map((item) => (
-                                    <div className='order-details2' key={item._id}>
-                                        <div>
-                                            <p>{item.title}</p>
-                                        </div>
-                                        <div>
-                                            <p>${item.price}</p>
-                                        </div>
-                                    </div>
-                                ))}
-
-                                {cartItems && cartItems.length > 0 ? (
-                                    <div className='order-details3'>
-                                        <div>
-                                            <p>Total</p>
-                                        </div>
-                                        <div>
-                                            <span>${totalPrice}</span>
-                                        </div>
-                                    </div>
-                                ) : <div style={{
-                                    fontSize: "20px",
-                                    marginTop: "30px",
-                                    marginBottom: "40px",
-                                    fontStyle: 'italic',
-                                    fontFamily: 'Poppins',
-                                    color: "#d3d3d3",
-                                    opacity: ".4"
-                                }}>
-                                    Please add something in your cart
-                                </div>}
-
-                            </div>
-
-                            {cartItems && cartItems.length > 0 && (
-                                <div className='checkout-payments'>
-                                    <ul className="payment_methods">
-
-                                        <li className="">
-                                            <input
-                                                onChange={handlePaymentMethodChange}
-                                                type="radio"
-                                                className="input-radio"
-                                                name="paymentMethod"
-                                                value="online_payment"
-                                                checked={paymentMethod === 'online_payment'}
-                                            />
-                                            <label >Online Payment </label>
-                                            {paymentMethod === 'online_payment' && (
-                                                <div>
-                                                    <p>
-                                                        Pay securely online using your credit card. All transactions are encrypted for your safety.
-
-                                                    </p>
-                                                    {renderCreditCardForm()}
-                                                </div>
-                                            )}
-                                        </li>
-                                        <li className="">
-                                            <input
-                                                onChange={handlePaymentMethodChange}
-                                                type="radio"
-                                                className="input-radio"
-                                                name="paymentMethod"
-                                                value="cash_on_delivery"
-                                                checked={paymentMethod === 'cash_on_delivery'}
-
-                                            />
-                                            <label htmlFor="">Cash on delivery</label>
-                                            {paymentMethod === 'cash_on_delivery' && (
-                                                <div>
-                                                    <p>
-                                                        Pay with cash when your order arrives. Please have the exact amount ready, as our delivery agents do not carry change.
-
-                                                    </p>
-                                                </div>
-                                            )}
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            )}
-
-
-                            <div className='personal-details-text'>
-                                <p>
-                                    Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.
-                                </p>
-                                <button
-                                    type='submit'
-                                    className='place-order-btn'
-                                    disabled={isBillingDetailsEmpty()}
-                                    onClick={handleSubmit}>Place Order</button>
-                            </div>
-                        </div>
+                    <div>
+                      <h5>Subtotal</h5>
                     </div>
+                  </div>
 
+                  {cartItems.map((item) => (
+                    <div className="order-details2" key={item._id}>
+                      <div>
+                        <p>{item.title}</p>
+                      </div>
+                      <div>
+                        <p>
+                          {item.qty} x ${item.price}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
 
+                  {cartItems && cartItems.length > 0 ? (
+                    <div className="order-details3">
+                      <div>
+                        <p>Total</p>
+                      </div>
+                      <div>
+                        <span>${totalPrice.toFixed(2)}</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <div
+                      style={{
+                        fontSize: "20px",
+                        marginTop: "30px",
+                        marginBottom: "40px",
+                        fontStyle: "italic",
+                        fontFamily: "Poppins",
+                        color: "#d3d3d3",
+                        opacity: ".4",
+                      }}
+                    >
+                      Please add something in your cart
+                    </div>
+                  )}
                 </div>
+
+                {cartItems && cartItems.length > 0 && (
+                  <div className="checkout-payments">
+                    <ul className="payment_methods">
+                      <li className="">
+                        <input
+                          onChange={handlePaymentMethodChange}
+                          type="radio"
+                          className="input-radio"
+                          name="paymentMethod"
+                          value="online_payment"
+                          checked={paymentMethod === "online_payment"}
+                        />
+                        <label>Online Payment </label>
+                        {paymentMethod === "online_payment" && (
+                          <div>
+                            <p>
+                              Pay securely online using your credit card. All
+                              transactions are encrypted for your safety.
+                            </p>
+                            {renderCreditCardForm()}
+                          </div>
+                        )}
+                      </li>
+                      <li className="">
+                        <input
+                          onChange={handlePaymentMethodChange}
+                          type="radio"
+                          className="input-radio"
+                          name="paymentMethod"
+                          value="cash_on_delivery"
+                          checked={paymentMethod === "cash_on_delivery"}
+                        />
+                        <label htmlFor="">Cash on delivery</label>
+                        {paymentMethod === "cash_on_delivery" && (
+                          <div>
+                            <p>
+                              Pay with cash when your order arrives. Please have
+                              the exact amount ready, as our delivery agents do
+                              not carry change.
+                            </p>
+                          </div>
+                        )}
+                      </li>
+                    </ul>
+                  </div>
+                )}
+
+                <div className="personal-details-text">
+                  <p>
+                    Your personal data will be used to process your order,
+                    support your experience throughout this website, and for
+                    other purposes described in our privacy policy.
+                  </p>
+                  <button
+                    type="submit"
+                    className="place-order-btn"
+                    disabled={isBillingDetailsEmpty()}
+                    onClick={handleSubmit}
+                  >
+                    Place Order
+                  </button>
+                </div>
+              </div>
             </div>
-            {/* <h3>Checkout Details</h3> */}
-        </React.Fragment >
-    )
+          </div>
+        </div>
+        {/* <h3>Checkout Details</h3> */}
+      </React.Fragment>
+    );
 }
 
 export default Checkout
