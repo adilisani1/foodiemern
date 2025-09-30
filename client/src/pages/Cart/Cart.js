@@ -1,18 +1,17 @@
 
 
-import React, { useState, } from 'react';
-import { Modal, ModalBody, NavLink } from 'reactstrap';
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
-import './Cart.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { inCreament, deCreament, removeCart } from '../../redux/cartSlice';
+import React from "react";
+// import { Modal, ModalBody, NavLink } from 'reactstrap';
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
+import "./Cart.css";
+import { useDispatch, useSelector } from "react-redux";
+import { inCreament, deCreament, removeCart } from "../../redux/cartSlice";
 
 import { useNavigate } from "react-router-dom";
 
 function Cart({ isCartModalOpen, setIsCartModalOpen }) {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
 
@@ -21,16 +20,16 @@ function Cart({ isCartModalOpen, setIsCartModalOpen }) {
   }, 0);
 
   // const qtyItems = cartItems.map((item) => item.qty)
-  const qtyItems = cartItems.reduce((totalQty, item) => {
-    return totalQty + item.qty;
-  }, 0);
+  // const qtyItems = cartItems.reduce((totalQty, item) => {
+  //   return totalQty + item.qty;
+  // }, 0);
 
   //Close cart modal
   const closeCartModal = () => {
-    setIsCartModalOpen(false)
-  }
+    setIsCartModalOpen(false);
+  };
 
-  // View Cart button 
+  // View Cart button
   const handleViewCartClick = () => {
     navigate("/checkout");
     // setModal(false)
@@ -47,7 +46,6 @@ function Cart({ isCartModalOpen, setIsCartModalOpen }) {
 
   // const totalPrice = orderTotal + shippingCost;
 
-
   // useEffect(() => {
   //   if (isCartModalOpen) {
   //     document.body.classList.add('overlay-backdrop');
@@ -56,31 +54,19 @@ function Cart({ isCartModalOpen, setIsCartModalOpen }) {
   //   }
   // }, [isCartModalOpen]);
 
-
-
   return (
     <div>
       {/* <Modal isOpen={modal} toggle={toggle}> */}
-      <div className={`cart-modal ${isCartModalOpen ? 'open' : ''}`}>
-
+      <div className={`cart-modal ${isCartModalOpen ? "open" : ""}`}>
         <div className="cart-modal-wrapper">
           <div className="cart-modal-inner">
             <div className="iCxowP kfarYJ">
-
               <div className="cart-modal-top">
-                <div
-                  width="100%"
-                  className="cart-modal-top-area"
-                >
-                  <div className="">
-                    Your Cart
-                  </div>
-                  <button
-                    className="close-cart-btn"
-                    onClick={closeCartModal}
-                  >
+                <div width="100%" className="cart-modal-top-area">
+                  <div className="">Your Cart</div>
+                  <button className="close-cart-btn" onClick={closeCartModal}>
                     <span className="inner">
-                      <CloseOutlinedIcon className='close-cart-icon' />
+                      <CloseOutlinedIcon className="close-cart-icon" />
                     </span>
                   </button>
                 </div>
@@ -98,20 +84,34 @@ function Cart({ isCartModalOpen, setIsCartModalOpen }) {
                               className="img-fluid rounded-3 me-3"
                               alt="Shopping item"
                             />
-                            <div className='cart-qty-wrapper'>
-                              <h5 className='cart-product-title'>{item.title}</h5>
-                              <div className='item-qty'>
-                                <button className='add-sub' onClick={() => dispatch(deCreament(item))}>-</button>
-                                <span className='cart-product-qty'>{item.qty}</span>
-                                <button className='add-sub' onClick={() => dispatch(inCreament(item))}>+</button>
+                            <div className="cart-qty-wrapper">
+                              <h5 className="cart-product-title">
+                                {item.title}
+                              </h5>
+                              <div className="item-qty">
+                                <button
+                                  className="add-sub"
+                                  onClick={() => dispatch(deCreament(item))}
+                                >
+                                  -
+                                </button>
+                                <span className="cart-product-qty">
+                                  {item.qty}
+                                </span>
+                                <button
+                                  className="add-sub"
+                                  onClick={() => dispatch(inCreament(item))}
+                                >
+                                  +
+                                </button>
                               </div>
                             </div>
                           </div>
-                          <div className='d-flex justify-content-end flex-column'>
+                          <div className="d-flex justify-content-end flex-column">
                             <h5 className="mb-0 cart-product-price">{`$${item.price}`}</h5>
-                            <div className='delete-cart-item'>
+                            <div className="delete-cart-item">
                               <DeleteForeverOutlinedIcon
-                                className='delete-cart-icon'
+                                className="delete-cart-icon"
                                 onClick={() => dispatch(removeCart(item))}
                               />
                             </div>
@@ -121,26 +121,25 @@ function Cart({ isCartModalOpen, setIsCartModalOpen }) {
                     </div>
                   </div>
                 ))}
-                {cartItems.length > 0 &&
+                {cartItems.length > 0 && (
                   <React.Fragment>
-                    <div className='order-total'>
+                    <div className="order-total">
                       <span>Sub Total</span>
-                      <h6>
-                        {`$${totalPrice.toFixed(2)}`}
-                      </h6>
+                      <h6>{`$${totalPrice.toFixed(2)}`}</h6>
                     </div>
-                    <button className='view-cart mt-4 mb-4' onClick={handleViewCartClick}>Chekout</button>
+                    <button
+                      className="view-cart mt-4 mb-4"
+                      onClick={handleViewCartClick}
+                    >
+                      Chekout
+                    </button>
                   </React.Fragment>
-
-                }
+                )}
               </div>
-
             </div>
           </div>
         </div>
       </div>
-
-
 
       {/* 
       <div className='modal-header'>

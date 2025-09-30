@@ -4,7 +4,7 @@ const dishRouter = express.Router();
 
 dishRouter.get("/dishes", async (req, res) => {
     const dishes = await Dishes.find({})
-    res.status(201).json(dishes);
+    res.status(200).json(dishes);
 })
 
 dishRouter.post('/dishes', async (req, res, next) => {

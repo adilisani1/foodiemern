@@ -16,7 +16,6 @@ const CustomerSlider = () => {
             slidesPerView: 3,
             spaceBetween: 60,
             // loop: true,
-            autoplay: true,
             // fade: true,
             centeredSlide: true,
             // loopFillGroupWithBlank: true,
