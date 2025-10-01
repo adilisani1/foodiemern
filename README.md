@@ -24,7 +24,7 @@ Users can browse dishes, view details, add items to cart, sign up/login with JWT
 - React.js
 - React Router DOM
 - Redux Toolkit (Cart management)
-- Tailwind CSS / Custom CSS
+- Custom CSS
 
 **Backend:**
 - Node.js
