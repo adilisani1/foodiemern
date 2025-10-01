@@ -32,9 +32,12 @@ function App() {
   };
 
   //Api
+  // Api
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/dishes`);
+      const API_BASE_URL = process.env.REACT_APP_API_URL;
+      const response = await axios.get(`${API_BASE_URL}/api/dishes`);
+
       if (Array.isArray(response.data)) {
         setDishes(response.data);
       } else {
