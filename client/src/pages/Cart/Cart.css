@@ -270,13 +270,15 @@
   cursor: pointer;
    justify-content: center;
   transition: color 0.2s ease;
-  display: inherit;
   align-items: center;
     font-family: var(--Poppins);
     border-radius: 10px;
     font-size: 1.7rem;
         width: 100%;
         padding: 1rem;
+
+            display: inherit;
+
 
 }
 
@@ -301,6 +303,10 @@
         width: 95%;
         margin: 0 auto;
 
+    }
+    .clear-cart-btn {
+          width: 95%;
+        margin: 0 auto;
     }
 }
 
@@ -361,6 +367,11 @@
 
     .view-cart {
         width: 90%;
+        margin: 0 auto;
+        font-size: 1.4rem;
+    }
+     .clear-cart-btn {
+           width: 90%;
         margin: 0 auto;
         font-size: 1.4rem;
     }
