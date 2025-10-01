@@ -200,6 +200,7 @@
 
 }.sign-out:hover {
     color: var(--white);
+    /* background: radial-gradient(#ED213A, #ac3123); */
     background-color: #d93d00;
 }
 
@@ -231,29 +232,37 @@
 
     }
 
-    .nav-list {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background-color: #4d38b2;
-        left: -100%;
-        top: 0;
-        display: flex;
-        z-index: 10000;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease;
-        flex-direction: column;
-        /* border-radius: 80px; */
-    }
+     .nav-list {
+    position: fixed;
+    width: 100%;              
+    max-width: 100%;        
+    height: 100%;            
+    overflow-y: auto;        
+    background-color: #4d38b2;
+    left: -100%;
+    top: 0;
+    display: flex;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    flex-direction: column;
+  }
 
+  .active .nav-list {
+    left: 0;                  /* slide from left properly */
+  }
     .nav-list .nav-menu {
-        display: flex;
+        display: flex;    
+        gap: 2rem;            
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
+.nav-list .nav-link {
+    font-size: 1.5rem;      
+    font-weight: 500;
+  }
     .active .nav-list {
         left: -100px;
 
@@ -316,7 +325,7 @@
         display: none;
     }
 
-    .sign-buttons {
+    /* .sign-buttons {
         display: flex;
         flex-direction: column;
 
@@ -326,7 +335,25 @@
         margin-bottom: 1rem;
 
 
-    }
+    } */
 
-
+ .sign-buttons {
+    flex-direction: column;   
+        gap: 2rem;            
+    justify-content: center;
+    align-items: center;
+   display: flex;
+   margin-top: 1rem;
+  }
+.sign-in{
+     font-size: 1.5rem;      
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+ .sign-up, .sign-out {
+  font-size: 1.5rem;      
+    font-weight: 500;
+        padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+  }
 }

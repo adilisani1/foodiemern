@@ -42,9 +42,7 @@ const Navbar = ({
     localStorage.removeItem("user");
     localStorage.removeItem("token");
     setUser(null);
-
     window.dispatchEvent(new Event("userLoggedOut"));
-
     navigate("/login");
   };
 
@@ -57,6 +55,9 @@ const Navbar = ({
   }, []);
 
   const toggleNavbar = () => setShowNav((prev) => !prev);
+
+  // ✅ close menu when clicking nav links
+  const handleNavClick = () => setShowNav(false);
 
   return (
     <section>
@@ -74,22 +75,30 @@ const Navbar = ({
         <nav className="nav-list">
           <ul className="nav-menu mx-auto">
             <li className="nav-items">
-              <NavLink className="nav-link" to="/">
+              <NavLink className="nav-link" to="/" onClick={handleNavClick}>
                 Home
               </NavLink>
             </li>
             <li className="nav-items">
-              <NavLink className="nav-link" to="/about">
+              <NavLink
+                className="nav-link"
+                to="/about"
+                onClick={handleNavClick}
+              >
                 About
               </NavLink>
             </li>
             <li className="nav-items">
-              <NavLink className="nav-link" to="/menu">
+              <NavLink className="nav-link" to="/menu" onClick={handleNavClick}>
                 Menu
               </NavLink>
             </li>
             <li className="nav-items">
-              <NavLink className="nav-link" to="/contact">
+              <NavLink
+                className="nav-link"
+                to="/contact"
+                onClick={handleNavClick}
+              >
                 Contact
               </NavLink>
             </li>
@@ -111,10 +120,10 @@ const Navbar = ({
               </div>
             ) : (
               <>
-                <Link className="formBtn" to="/login">
+                <Link className="formBtn" to="/login" onClick={handleNavClick}>
                   <button className="btn sign-in">Sign In</button>
                 </Link>
-                <Link className="formBtn" to="/signup">
+                <Link className="formBtn" to="/signup" onClick={handleNavClick}>
                   <button className="btn sign-up">Sign Up</button>
                 </Link>
               </>
