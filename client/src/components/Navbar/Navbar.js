@@ -66,6 +66,10 @@ const Navbar = ({
           showNav ? "active" : ""
         }`}
       >
+        {showNav && (
+          <div className="menu-overlay" onClick={() => setShowNav(false)} />
+        )}
+
         <div className="logo">
           <Link to="/">
             <img src="/images/foood-logo.png" className="logo-img" alt="logo" />
