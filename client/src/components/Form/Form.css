@@ -1,147 +1,167 @@
 section {
-    position: relative;
-
+  position: relative;
 }
 
 .form-bg {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgb(137, 115, 175);
-    background: radial-gradient(circle, rgba(137, 115, 175, 1) 0%, rgba(87, 68, 130, 1) 50%, rgba(50, 46, 56, 1) 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(137, 115, 175, 1) 0%, rgba(87, 68, 130, 1) 50%, rgba(50, 46, 56, 1) 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1rem; 
 }
 
 .form-bg .f-wrapper {
-    position: relative;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
 }
 
 .form-bg .formCard {
-    padding: 5rem 4rem;
-    max-width: 100%;
-    width: 600px;
-    border-radius: 30px;
-    background-color: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 3rem 2rem;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.formCard .form-sign {
-    position: relative;
-    width: 60%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 100%;
-    padding: 4rem 0 10rem 0;
-}
-
-.form-sign div input {
-    height: 4.5rem;
-    font-size: 1.5rem;
-    font-family: var(--Poppins);
-
-}
-
-.form-sign div label {
-    justify-content: flex-start;
-    font-size: 1.5rem;
-    font-family: var(--Poppins);
-
-}
-
-.form-sign button {
-    font-size: 1.5rem;
-    padding: 1rem;
-    height: 50px;
-    border: none;
-    background-color: #FF7B5F;
-    color: white;
-    font-family: var(--Poppins);
-
-}
-
-.form-sign button:hover {
-    color: var(--white);
-    background-color: #d93d00;
+.form-bg .formCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .formCard h1 {
-    font-family: var(--Poppins);
-    color: var(--bg-color-two);
-    font-size: 3rem;
+  font-family: var(--Poppins);
+  color: var(--bg-color-two);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
 
+.form-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-wrap label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 0.3rem;
+}
+
+.form-wrap input {
+  height: 3.2rem;
+  font-size: 1rem;
+  font-family: var(--Poppins);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  outline: none;
+  color: #000;
+  transition: border 0.2s;
+}
+
+.form-wrap input:focus {
+  border-color: #6c5ce7;
+    color: #000;
+
+  box-shadow: 0 0 5px rgba(108, 92, 231, 0.2);
+}
+
+.form-wrap button {
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff7b5f, #ff9966);
+  color: #fff;
+  font-weight: 600;
+  font-family: var(--Poppins);
+  transition: background 0.3s ease;
+}
+
+.form-wrap button:hover {
+  background: linear-gradient(135deg, #d93d00, #ff5f40);
 }
 
 .member {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
 }
 
 .member a {
-    font-size: 1.5rem;
-    color: #252525;
-    margin-right: 0.6rem;
-    font-family: var(--Poppins);
+  font-size: 1rem;
+  color: #252525;
+  font-family: var(--Poppins);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .member a:hover {
-
-    color: #b8b1b1;
-
+  color: #6c5ce7;
 }
 
 .member .push-signin {
-    font-size: 1.7rem;
-    font-family: var(--Poppins);
-    text-decoration: none;
-    color: var(--bg-color-two);
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--Poppins);
+  text-decoration: none;
+  color: var(--bg-color-two);
 }
 
-@media screen and (max-width: 990px) {
+/* ✅ Responsiveness */
+@media screen and (max-width: 768px) {
+  .form-bg .formCard {
+    padding: 2.5rem 1.5rem;
+  }
 
-    /* .form-bg .formCard {
-        width: 600px;
+  .formCard h1 {
+    font-size: 2rem;
+  }
 
-    } */
-    /* 
-    .formCard .form-sign {
-        width: 100%;
+  .form-wrap input {
+    height: 3rem;
+    font-size: 0.95rem;
+  }
 
-    } */
-    .form-bg .formCard {
-        max-width: 100%;
-
-
-    }
-
+  .form-wrap button {
+    font-size: 1.1rem;
+    padding: 0.7rem;
+  }
 }
 
-@media screen and (max-width: 600px) {
-    .form-bg .formCard {
-        max-width: 100%;
+@media screen and (max-width: 480px) {
+  .form-bg .formCard {
+    padding: 2rem 1rem;
+    border-radius: 15px;
+  }
 
-        width: 400px;
+  .formCard h1 {
+    font-size: 1.8rem;
+  }
 
-    }
+  .form-wrap input {
+    height: 2.8rem;
+    font-size: 0.9rem;
+  }
 
+  .form-wrap button {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
 
-}
-
-
-@media screen and (max-width: 425px) {
-    .form-bg .formCard {
-        width: 300px;
-        max-width: 100%;
-    }
-
-
-
+  .member {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
 }

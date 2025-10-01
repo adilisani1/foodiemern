@@ -14,6 +14,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Checkout from "./pages/Checkout/Checkout";
 import OrderCompleted from "./components/OrderCompleted/OrderCompleted";
 import ScrollToTop from "./components/ScrollToTop";
+import ProtectedRoute from "./components/Form/ProtectedRoute";
 
 function App() {
   const [showNav, setShowNav] = useState(false);
@@ -74,7 +75,6 @@ function App() {
             element={<DishDetails singleDish={dishes} headerColor="#4d38b2" />}
           />
           <Route exact path="/about" element={<About />} />
-          <Route exact path="/checkout" element={<Checkout />} />
           <Route exact path="/menu" element={<Menu dishes={dishes} />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
@@ -85,6 +85,14 @@ function App() {
             path="/:id"
             element={<DishDetails singleDish={dishes} headerColor="#4d38b2" />}
           />
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute>
+                <Checkout />
+              </ProtectedRoute>
+            }
+          />{" "}
         </Routes>
       </div>
       {showNavAndFooter && <Footer />}

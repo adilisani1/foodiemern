@@ -1,101 +1,147 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
-import { Link, NavLink } from "react-router-dom"
-import DragHandleIcon from '@mui/icons-material/DragHandle';
-import CloseIcon from '@mui/icons-material/Close';
-import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
-import Cart from '../../pages/Cart/Cart';
-import { useSelector } from 'react-redux';
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import DragHandleIcon from "@mui/icons-material/DragHandle";
+import CloseIcon from "@mui/icons-material/Close";
+import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
+import Cart from "../../pages/Cart/Cart";
+import { useSelector } from "react-redux";
 
-const Navbar = ({ showNav, setShowNav, isCartModalOpen, setIsCartModalOpen, toggleViewCart }) => {
-    const [isActiveHeader, setIsActiveHeader] = useState(false);
-    const [modal, setModal] = useState(false);
-    const cartItems = useSelector((state) => state.cart.cartItems);
+const Navbar = ({
+  showNav,
+  setShowNav,
+  isCartModalOpen,
+  setIsCartModalOpen,
+  toggleViewCart,
+}) => {
+  const [isActiveHeader, setIsActiveHeader] = useState(false);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
-    const toggle = () => setModal(!modal);
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    setUser(storedUser ? JSON.parse(storedUser) : null);
 
-    useEffect(() => {
-        function handleScroll() {
-            if (window.pageYOffset > 50) {
-                setIsActiveHeader(true);
-            } else {
-                setIsActiveHeader(false);
-            }
-        }
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const toggleNavbar = () => {
-        setShowNav(prevState => !prevState);
+    const handleAuthChange = () => {
+      const u = localStorage.getItem("user");
+      setUser(u ? JSON.parse(u) : null);
     };
 
+    // 👂 Listen for login + logout
+    window.addEventListener("userLoggedIn", handleAuthChange);
+    window.addEventListener("userLoggedOut", handleAuthChange);
 
+    return () => {
+      window.removeEventListener("userLoggedIn", handleAuthChange);
+      window.removeEventListener("userLoggedOut", handleAuthChange);
+    };
+  }, []);
 
-    return (
-        <>
-            <section className=''>
-                <header className={`header-wrap ${isActiveHeader ? "show" : ""} ${showNav ? "active" : ""}`}>
-                    <div className='logo'>
-                        <Link to='/'><img src='/images/foood-logo.png' className="logo-img" alt='' /></Link>
-                    </div>
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    setUser(null);
 
+    window.dispatchEvent(new Event("userLoggedOut"));
 
-                    <nav className="nav-list">
-                        <ul className="nav-menu mx-auto">
-                            <li className="nav-items">
-                                <NavLink className="nav-link" to="/">Home</NavLink>
-                            </li>
-                            <li className="nav-items">
-                                <NavLink className="nav-link" to="/about">About</NavLink>
-                            </li>
-                            <li className="nav-items">
-                                <NavLink className="nav-link" to="/menu">Menu</NavLink>
-                            </li>
-                            <li className="nav-items">
-                                <NavLink className="nav-link" to="/contact">Contact</NavLink>
-                            </li>
-                        </ul>
-                        <div className='cart-icon' onClick={toggle}>
-                            <span className='cart-qty'>{cartItems.length}</span>
-                            <span className='cart' onClick={toggleViewCart}><ShoppingBasketOutlinedIcon /></span>
-                        </div>
+    navigate("/login");
+  };
 
-                        <div className='sign-buttons'>
-                            <button className='btn sign-in'> <Link className='formBtn' to="/login">
-                                Sign In
-                            </Link></button>
-                            <Link className='formBtn' to="/signup">
-                                <button className='btn sign-up'>
-                                    Sign up
-                                </button>
-                            </Link>
-                        </div>
+  useEffect(() => {
+    function handleScroll() {
+      setIsActiveHeader(window.pageYOffset > 50);
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-                    </nav>
+  const toggleNavbar = () => setShowNav((prev) => !prev);
 
-                    <div className='mobile-cart-wrapper' onClick={toggle}>
-                        <span className='mobile-cart-qty'>{cartItems.length}</span>
-                        <span className='mobile-cart-icon' onClick={toggleViewCart}><ShoppingBasketOutlinedIcon /></span>
-                    </div>
+  return (
+    <section>
+      <header
+        className={`header-wrap ${isActiveHeader ? "show" : ""} ${
+          showNav ? "active" : ""
+        }`}
+      >
+        <div className="logo">
+          <Link to="/">
+            <img src="/images/foood-logo.png" className="logo-img" alt="logo" />
+          </Link>
+        </div>
 
-                    <div className='mobile-menu' onClick={toggleNavbar}>
-                        <DragHandleIcon className='menu-icon ' />
-                        <CloseIcon className='close-icon ' />
-                    </div>
+        <nav className="nav-list">
+          <ul className="nav-menu mx-auto">
+            <li className="nav-items">
+              <NavLink className="nav-link" to="/">
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-items">
+              <NavLink className="nav-link" to="/about">
+                About
+              </NavLink>
+            </li>
+            <li className="nav-items">
+              <NavLink className="nav-link" to="/menu">
+                Menu
+              </NavLink>
+            </li>
+            <li className="nav-items">
+              <NavLink className="nav-link" to="/contact">
+                Contact
+              </NavLink>
+            </li>
+          </ul>
 
+          <div className="cart-icon" onClick={toggleViewCart}>
+            <span className="cart-qty">{cartItems.length}</span>
+            <span className="cart">
+              <ShoppingBasketOutlinedIcon />
+            </span>
+          </div>
 
-                </header>
+          <div className="sign-buttons">
+            {user ? (
+              <div className="user-section">
+                <button className="btn sign-out" onClick={handleLogout}>
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <>
+                <Link className="formBtn" to="/login">
+                  <button className="btn sign-in">Sign In</button>
+                </Link>
+                <Link className="formBtn" to="/signup">
+                  <button className="btn sign-up">Sign Up</button>
+                </Link>
+              </>
+            )}
+          </div>
+        </nav>
 
-                {/* {modal && <Cart modal={modal} setModal={setModal} toggle={toggle} />} */}
-                <Cart
-                    isCartModalOpen={isCartModalOpen}
-                    toggleViewCart={toggleViewCart} setIsCartModalOpen={setIsCartModalOpen} />
-            </section >
+        <div className="mobile-cart-wrapper" onClick={toggleViewCart}>
+          <span className="mobile-cart-qty">{cartItems.length}</span>
+          <span className="mobile-cart-icon">
+            <ShoppingBasketOutlinedIcon />
+          </span>
+        </div>
 
+        <div className="mobile-menu" onClick={toggleNavbar}>
+          <DragHandleIcon className="menu-icon" />
+          <CloseIcon className="close-icon" />
+        </div>
+      </header>
 
-        </>
-    )
-}
+      <Cart
+        isCartModalOpen={isCartModalOpen}
+        setIsCartModalOpen={setIsCartModalOpen}
+        toggleViewCart={toggleViewCart}
+      />
+    </section>
+  );
+};
 
-export default Navbar
+export default Navbar;
