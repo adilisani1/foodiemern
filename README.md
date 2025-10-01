@@ -35,5 +35,3 @@ Users can browse dishes, view details, add items to cart, sign up/login with JWT
 
 ---
 
-## 📂 Project Structure
-
