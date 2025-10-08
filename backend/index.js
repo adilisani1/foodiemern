@@ -11,10 +11,7 @@ require('dotenv').config();
 // app.use(cors());
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://foodiemern-front-end.vercel.app",
-    ],
+    origin: ["*", "https://foodiemern-front-end.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
