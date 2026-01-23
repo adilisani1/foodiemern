@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import "./Form.css";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -57,39 +65,76 @@ const Login = () => {
 
   return (
     <section className="form-bg">
-      <div className="f-wrapper mx-auto">
-        <div className="formCard">
-          <h1 className="mb-3 mt-5 text-center">Sign In</h1>
-          <form className="form-wrap" onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label>Email address</label>
-              <input
-                type="email"
-                name="email"
-                className="form-control"
-                value={formData.email}
-                onChange={handleChange}
-              />
+      <div className="form-container">
+     
+        {/* Left Side - Form */}
+        <div className="form-content-side">
+          <button className="back-button" onClick={() => navigate("/")}>
+            <ArrowBackIcon />
+          </button>
+          <div className="formCard">
+            <div className="form-header">
+              <div className="form-icon"></div>
+              <h1>Sign In</h1>
             </div>
-            <div className="mb-4">
-              <label>Password</label>
-              <input
-                type="password"
-                name="password"
-                className="form-control"
-                value={formData.password}
-                onChange={handleChange}
-              />
+            
+            <form className="form-wrap" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="email">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="form-control"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email address"
+                />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <div className="password-input-wrapper">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    id="password"
+                    className="form-control"
+                    value={formData.password}
+                    onChange={handleChange}
+                    placeholder="Enter your password"
+                  />
+                  <button
+                    type="button"
+                    className="password-toggle"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" className="form-submit-btn">Sign In</button>
+              
+              <div className="form-footer">
+                <span>Don't have an account?</span>
+                <Link to="/signup" className="form-link">
+                  Sign Up
+                </Link>
+              </div>
+            </form>
+
+            <div className="social-icons">
+              <FacebookIcon className="social-icon" />
+              <TwitterIcon className="social-icon" />
+              <InstagramIcon className="social-icon" />
+              <LinkedInIcon className="social-icon" />
             </div>
-            <button type="submit">Sign In</button>
-            <div className="col-12 text-center member">
-              <a href="/signup">Don’t have an account?</a>
-              <Link to="/signup" className="push-signin">
-                Sign Up
-              </Link>
-            </div>
-          </form>
+          </div>
         </div>
+           {/* Right Side - Hero Background */}
+        <div className="form-hero-side"></div>
+
       </div>
     </section>
   );

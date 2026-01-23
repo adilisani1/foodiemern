@@ -22,7 +22,7 @@ function App() {
   const location = useLocation();
 
   // ✅ fixed array
-  const hideOnRoutes = ["/checkout", "/order-completed"];
+  const hideOnRoutes = ["/checkout", "/order-completed", "/login", "/signup"];
   const showNavAndFooter = !hideOnRoutes.includes(location.pathname);
 
   //CartModal Toggle
