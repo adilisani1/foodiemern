@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import MenuComponent from '../../components/MenuComponent/MenuComponent';
 import './Home.css';
 // import Dishes from "../../dishes.json"
@@ -10,20 +10,23 @@ const Home = ({ dishes }) => {
 
     // const [activeDish, setActiveDish] = useState(false)
 
-    const filterItem = (category) => {
+    const filterItem = useCallback((category) => {
         const updatedList = dishes.filter((item) => item.category === category);
         setMyDishes(updatedList);
         setCatActive(category);
         // setActiveDish(category)
+    }, [dishes]);
 
-    };
-
-    const categories = [...new Set(dishes.map((dish) => dish.category))];
+    const categories = useMemo(() => {
+        return [...new Set(dishes.map((dish) => dish.category))];
+    }, [dishes]);
 
     useEffect(() => {
-        const defaultCategory = categories[0];
-        filterItem(defaultCategory);
-    }, [dishes]);
+        if (categories.length > 0) {
+            const defaultCategory = categories[0];
+            filterItem(defaultCategory);
+        }
+    }, [categories, filterItem]);
 
 
     return (
