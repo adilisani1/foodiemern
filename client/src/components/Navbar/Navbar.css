@@ -360,7 +360,7 @@
   .mobile-cart-wrapper {
     display: flex;
     position: absolute;
-    right: 55px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -471,7 +471,7 @@
   }
 
   .mobile-cart-wrapper {
-    right: 50px;
+    right: 20px;
   }
 
   .mobile-cart-wrapper .mobile-cart-icon {
@@ -536,7 +536,7 @@
   }
 
   .mobile-cart-wrapper {
-    right: 45px;
+    right: 16px;
   }
 
   .mobile-menu {
