@@ -8,13 +8,19 @@ const port = process.env.PORT || 5000;
 const app = express();
 require('dotenv').config();
 
-// const allowedOrigins = [
-//   "http://localhost:3000",
-//   "https://foodiemern-front-end.vercel.app",
-// ];
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://foodiemern-front-end.vercel.app",
+];
 app.use(
   cors({
-  origin: "https://foodiemern-front-end.vercel.app",
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
