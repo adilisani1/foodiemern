@@ -53,6 +53,9 @@ function App() {
 
   useEffect(() => {
     fetchData();
+
+    window.addEventListener("userLoggedIn", fetchData);
+    return () => window.removeEventListener("userLoggedIn", fetchData);
   }, []);
 
   useEffect(() => {

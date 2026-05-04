@@ -1,14 +1,13 @@
 .header-wrap {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1440px;
   z-index: 1000;
-  padding: 1.25rem 4rem;
+  padding: 1.25rem max(4rem, calc((100% - 1440px) / 2 + 4rem));
   justify-content: space-between;
   background: transparent;
   transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
@@ -19,7 +18,7 @@
   background: rgba(77, 56, 178, 0.95);
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  padding: 1rem 4rem;
+  padding: 1rem max(4rem, calc((100% - 1440px) / 2 + 4rem));
 }
 
 .menu-overlay {
