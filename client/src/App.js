@@ -15,6 +15,8 @@ import Checkout from "./pages/Checkout/Checkout";
 import OrderCompleted from "./components/OrderCompleted/OrderCompleted";
 import ScrollToTop from "./components/ScrollToTop";
 import ProtectedRoute from "./components/Form/ProtectedRoute";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [showNav, setShowNav] = useState(false);
@@ -59,6 +61,15 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        theme="colored"
+      />
       <ScrollToTop />
       {showNavAndFooter && (
         <Navbar

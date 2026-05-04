@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
 import CloseIcon from "@mui/icons-material/Close";
-import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
+import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import Cart from "../../pages/Cart/Cart";
 import { useSelector } from "react-redux";
 
@@ -111,7 +111,7 @@ const Navbar = ({
           <div className="cart-icon" onClick={toggleViewCart}>
             <span className="cart-qty">{cartItems.length}</span>
             <span className="cart">
-              <ShoppingBasketOutlinedIcon />
+              <LocalMallOutlinedIcon />
             </span>
           </div>
 
@@ -138,7 +138,7 @@ const Navbar = ({
         <div className="mobile-cart-wrapper" onClick={toggleViewCart}>
           <span className="mobile-cart-qty">{cartItems.length}</span>
           <span className="mobile-cart-icon">
-            <ShoppingBasketOutlinedIcon />
+            <LocalMallOutlinedIcon />
           </span>
         </div>
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Contact.css'
 import Loading from '../../components/Loading/Loading';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -29,31 +30,39 @@ const Contact = () => {
     const { name, phone, email, message } = formData;
 
     if (!name || !phone || !email || !message) {
-      alert('Please fill in all the details ');
+      toast.warn('Please fill in all the details');
       return;
     }
 
-    const res = await fetch("http://localhost:5000/api/contact-us", {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: name,
-        email,
-        message
+    try {
+      const API_BASE_URL = process.env.REACT_APP_API_URL;
+      const res = await fetch(`${API_BASE_URL}/api/contact-us`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: name,
+          email,
+          message
+        })
       })
-    })
-    const data = await res.json();
+      const data = await res.json();
 
-    if (data.message === "Please filled the details correctly." || !data) {
-      alert('Something went wrong')
-    } else {
+      if (!res.ok) {
+        toast.error(data.message || data.error || 'Something went wrong');
+        return;
+      }
+
+      toast.success('Message sent successfully!');
+      setLoading(false);
       setTimeout(() => {
-        setLoading(true)
-        navigate('/')
+        setLoading(true);
+        navigate('/');
       }, 3000);
-      setLoading(false)
+    } catch (err) {
+      console.error('Contact submit error:', err);
+      toast.error('Something went wrong. Please try again.');
     }
   }
 

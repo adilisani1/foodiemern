@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Form.css";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -29,20 +30,21 @@ const Signup = () => {
     const { username, email, password } = formData;
 
     if (!username || !email || !password) {
-      alert("Please fill in all the details.");
+      toast.warn("Please fill in all the details.");
       return;
     }
 
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
     if (!passwordRegex.test(password)) {
-      alert(
+      toast.warn(
         "Password must be at least 6 characters long and include both letters and numbers."
       );
       return;
     }
 
     try {
-      const res = await fetch("http://localhost:5000/auth/register", {
+      const API_BASE_URL = process.env.REACT_APP_API_URL;
+      const res = await fetch(`${API_BASE_URL}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),
@@ -50,18 +52,20 @@ const Signup = () => {
 
       const data = await res.json();
 
-      if (data.message === "User already exists.") {
-        alert("User already exists.");
-      } else {
-        setLoading(false);
-        setTimeout(() => {
-          setLoading(true);
-          navigate("/login");
-        }, 3000);
+      if (!res.ok) {
+        toast.error(data.message || data.error || "Could not create account.");
+        return;
       }
+
+      toast.success("Account created! Redirecting to login...");
+      setLoading(false);
+      setTimeout(() => {
+        setLoading(true);
+        navigate("/login");
+      }, 3000);
     } catch (err) {
       console.error("Signup error:", err);
-      alert("Something went wrong.");
+      toast.error("Something went wrong. Please try again.");
     }
   };
 

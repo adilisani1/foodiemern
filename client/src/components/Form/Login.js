@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
 import "./Form.css";
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -25,12 +26,13 @@ const Login = () => {
     const { email, password } = formData;
 
     if (!email || !password) {
-      alert("Please fill in all the details");
+      toast.warn("Please fill in all the details");
       return;
     }
 
     try {
-      const res = await fetch("http://localhost:5000/auth/login", {
+      const API_BASE_URL = process.env.REACT_APP_API_URL;
+      const res = await fetch(`${API_BASE_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -39,16 +41,16 @@ const Login = () => {
       const data = await res.json();
 
       if (!res.ok) {
-        alert(data.message || "Invalid credentials");
+        toast.error(data.message || data.error || "Invalid credentials");
         return;
       }
 
-      // ✅ Save token + user in localStorage
       localStorage.setItem("user", JSON.stringify(data.user));
       localStorage.setItem("token", data.token);
 
-      // 🔥 Trigger custom auth event for Navbar
       window.dispatchEvent(new Event("userLoggedIn"));
+
+      toast.success("Logged in successfully!");
 
       setLoading(false);
       setTimeout(() => {
@@ -57,7 +59,7 @@ const Login = () => {
       }, 1500);
     } catch (err) {
       console.error(err);
-      alert("Something went wrong");
+      toast.error("Something went wrong. Please try again.");
     }
   };
 
