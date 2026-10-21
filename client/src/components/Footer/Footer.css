@@ -18,8 +18,9 @@
 }
 
 .opening-hours h3 {
-  font-family: var(--display);
+  font-family: var(--body);
   font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
   text-transform: none;
@@ -36,6 +37,7 @@
   color: #ff7b5f;
   font-weight: 500;
   font-family: var(--body);
+  letter-spacing: 0.01em;
 }
 
 .opening-hours ul li {
@@ -44,6 +46,7 @@
   font-weight: 400;
   font-family: var(--body);
   margin-bottom: 0.55rem;
+  letter-spacing: 0.01em;
 }
 
 .stay-in-touch {
@@ -55,7 +58,8 @@
 
 .stay-in-touch h3 {
   font-size: 2.4rem;
-  font-family: var(--display);
+  font-family: var(--body);
+  font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
   text-transform: none;
@@ -66,6 +70,7 @@
   font-family: var(--body);
   font-weight: 400;
   color: #a1a1aa;
+  letter-spacing: 0.01em;
 }
 
 .footer-links {
@@ -74,8 +79,9 @@
 }
 
 .footer-links h3 {
-  font-family: var(--display);
+  font-family: var(--body);
   font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
   text-transform: none;
@@ -92,6 +98,7 @@
   font-weight: 400;
   font-family: var(--body);
   margin-bottom: 0.55rem;
+  letter-spacing: 0.01em;
 }
 
 .subscribe {
@@ -164,6 +171,7 @@
   font-size: 1.35rem;
   color: #52525b;
   font-family: var(--body);
+  letter-spacing: 0.01em;
 }
 
 .footer-bottom .payment-card-container .payment-card {

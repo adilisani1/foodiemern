@@ -109,7 +109,9 @@ const Navbar = ({
           </ul>
 
           <div className="cart-icon" onClick={toggleViewCart}>
-            <span className="cart-qty">{cartItems.length}</span>
+            {cartItems.length > 0 && (
+              <span className="cart-qty">{cartItems.length}</span>
+            )}
             <span className="cart">
               <LocalMallOutlinedIcon />
             </span>
@@ -136,7 +138,9 @@ const Navbar = ({
         </nav>
 
         <div className="mobile-cart-wrapper" onClick={toggleViewCart}>
-          <span className="mobile-cart-qty">{cartItems.length}</span>
+          {cartItems.length > 0 && (
+            <span className="mobile-cart-qty">{cartItems.length}</span>
+          )}
           <span className="mobile-cart-icon">
             <LocalMallOutlinedIcon />
           </span>
