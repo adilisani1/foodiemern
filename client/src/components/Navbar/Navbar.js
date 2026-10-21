@@ -54,10 +54,22 @@ const Navbar = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleNavbar = () => setShowNav((prev) => !prev);
+  const openNavbar = (e) => {
+    e?.preventDefault?.();
+    e?.stopPropagation?.();
+    setShowNav(true);
+  };
 
-  // ✅ close menu when clicking nav links
-  const handleNavClick = () => setShowNav(false);
+  const closeNavbar = (e) => {
+    e?.preventDefault?.();
+    e?.stopPropagation?.();
+    setShowNav(false);
+  };
+
+  const handleNavClick = (e) => {
+    e?.stopPropagation?.();
+    setShowNav(false);
+  };
 
   return (
     <section>
@@ -66,17 +78,19 @@ const Navbar = ({
           showNav ? "active" : ""
         }`}
       >
-        {showNav && (
-          <div className="menu-overlay" onClick={() => setShowNav(false)} />
-        )}
+        <div
+          className={`menu-overlay ${showNav ? "is-visible" : ""}`}
+          onClick={closeNavbar}
+          aria-hidden={!showNav}
+        />
 
         <div className="logo">
-          <Link to="/">
+          <Link to="/" onClick={closeNavbar}>
             <img src="/images/foood-logo.png" className="logo-img" alt="logo" />
           </Link>
         </div>
 
-        <nav className="nav-list">
+        <nav className="nav-list" aria-hidden={!showNav}>
           <ul className="nav-menu mx-auto">
             <li className="nav-items">
               <NavLink className="nav-link" to="/" onClick={handleNavClick}>
@@ -120,7 +134,14 @@ const Navbar = ({
           <div className="sign-buttons">
             {user ? (
               <div className="user-section">
-                <button type="button" className="btn sign-out" onClick={handleLogout}>
+                <button
+                  type="button"
+                  className="btn sign-out"
+                  onClick={(e) => {
+                    closeNavbar(e);
+                    handleLogout();
+                  }}
+                >
                   Sign Out
                 </button>
               </div>
@@ -150,7 +171,8 @@ const Navbar = ({
           type="button"
           className="mobile-menu"
           aria-label={showNav ? "Close menu" : "Open menu"}
-          onClick={toggleNavbar}
+          aria-expanded={showNav}
+          onClick={showNav ? closeNavbar : openNavbar}
         >
           <DragHandleIcon className="menu-icon" />
           <CloseIcon className="close-icon" />

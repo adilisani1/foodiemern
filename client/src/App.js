@@ -110,12 +110,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (showNav) {
-      document.body.classList.add("body-bg");
-    } else {
-      document.body.classList.remove("body-bg");
-    }
-    return () => document.body.classList.remove("body-bg");
+    document.body.style.overflow = showNav ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [showNav]);
 
   return (
