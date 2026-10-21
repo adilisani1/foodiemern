@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Home from "./pages/Home/Home";
 import DishDetails from "./components/DishDetails/DishDetails";
 import About from "./pages/About/About";
@@ -17,11 +17,15 @@ import ScrollToTop from "./components/ScrollToTop";
 import ProtectedRoute from "./components/Form/ProtectedRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useSelector } from "react-redux";
 
 function App() {
   const [showNav, setShowNav] = useState(false);
   const [dishes, setDishes] = useState([]);
   const location = useLocation();
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const prevCartQty = useRef(null);
+  const cartReady = useRef(false);
 
   // ✅ fixed array
   const hideOnRoutes = ["/checkout", "/order-completed", "/login", "/signup"];
@@ -32,6 +36,53 @@ function App() {
   const toggleViewCart = () => {
     setIsCartModalOpen(true);
   };
+
+  useEffect(() => {
+    const totalQty = cartItems.reduce((sum, item) => sum + item.qty, 0);
+
+    // Ignore qty changes until persist has settled (avoids cart peaking on mobile load)
+    if (!cartReady.current) {
+      prevCartQty.current = totalQty;
+      return;
+    }
+
+    if (prevCartQty.current !== null && totalQty > prevCartQty.current) {
+      setIsCartModalOpen(true);
+      setShowNav(false);
+    }
+
+    if (totalQty === 0) {
+      setIsCartModalOpen(false);
+    }
+
+    prevCartQty.current = totalQty;
+  }, [cartItems]);
+
+  useEffect(() => {
+    setIsCartModalOpen(false);
+    const timer = setTimeout(() => {
+      prevCartQty.current = cartItems.reduce((sum, item) => sum + item.qty, 0);
+      cartReady.current = true;
+    }, 500);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Close cart on checkout and after order success redirect
+  useEffect(() => {
+    if (
+      location.pathname === "/checkout" ||
+      location.pathname === "/order-completed"
+    ) {
+      setIsCartModalOpen(false);
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const closeCart = () => setIsCartModalOpen(false);
+    window.addEventListener("orderPlaced", closeCart);
+    return () => window.removeEventListener("orderPlaced", closeCart);
+  }, []);
 
   //Api
   // Api

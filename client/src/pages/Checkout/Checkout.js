@@ -72,16 +72,17 @@ const Checkout = () => {
         e.preventDefault();
 
         if (paymentMethod === "cash_on_delivery") {
-            navigate('/order-completed')
-            dispatch(clearCart())
+            dispatch(clearCart());
+            window.dispatchEvent(new Event("orderPlaced"));
+            navigate("/order-completed");
             return;
         }
 
         if (validateForm()) {
-            navigate('/order-completed')
-            dispatch(clearCart())
+            dispatch(clearCart());
+            window.dispatchEvent(new Event("orderPlaced"));
+            navigate("/order-completed");
         }
-
     };
 
     function renderCreditCardForm() {
@@ -174,7 +175,7 @@ const Checkout = () => {
             </div>
             <div className="place-order">
               <h2 className="place-order-text">
-                Place your<p>Order</p>
+                Place your <p>order</p>
               </h2>
             </div>
           </div>

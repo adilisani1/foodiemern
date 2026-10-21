@@ -17,16 +17,209 @@ section {
 
 /* Left Side - Hero Background */
 .form-hero-side {
-  background: radial-gradient(
-    circle,
-    rgba(137, 115, 175, 1) 0%,
-    rgba(87, 68, 130, 1) 50%,
-    rgba(50, 46, 56, 1) 100%
-  );
+  background: #2f184d;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  overflow: hidden;
+  padding: 3rem;
+}
+
+.form-hero-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.form-hero-shade::before {
+  content: "";
+  position: absolute;
+  width: 75vmax;
+  height: 55vmax;
+  top: -35%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(137, 115, 175, 0.95) 0%,
+    rgba(87, 68, 130, 0.65) 40%,
+    transparent 70%
+  );
+  filter: blur(260px);
+  animation: formHeroLightShift 14s ease-in-out infinite alternate;
+}
+
+.form-hero-shade::after {
+  content: "";
+  position: absolute;
+  width: 50vmax;
+  height: 40vmax;
+  top: -18%;
+  right: 5%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(168, 140, 220, 0.85) 0%,
+    rgba(87, 68, 130, 0.5) 45%,
+    transparent 70%
+  );
+  filter: blur(280px);
+  animation: formHeroLightShift 16s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes formHeroLightShift {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.95;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-hero-shade::before,
+  .form-hero-shade::after {
+    animation: none;
+  }
+}
+
+.form-hero-floaters {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.form-floater {
+  position: absolute;
+  width: clamp(44px, 8vw, 72px);
+  height: auto;
+  object-fit: contain;
+  opacity: 0.4;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+  animation: formFloaterDrift 9s ease-in-out infinite;
+}
+
+.form-floater--1 {
+  top: 12%;
+  left: 8%;
+  transform: rotate(-16deg);
+  animation-duration: 8s;
+}
+
+.form-floater--2 {
+  top: 18%;
+  right: 10%;
+  width: clamp(40px, 7vw, 64px);
+  transform: rotate(14deg);
+  animation-duration: 10s;
+  animation-delay: -1.5s;
+}
+
+.form-floater--3 {
+  bottom: 22%;
+  left: 6%;
+  width: clamp(48px, 8.5vw, 76px);
+  transform: rotate(10deg);
+  animation-duration: 9.5s;
+  animation-delay: -2.5s;
+}
+
+.form-floater--4 {
+  bottom: 18%;
+  right: 8%;
+  width: clamp(38px, 6.5vw, 60px);
+  transform: rotate(-12deg);
+  animation-duration: 11s;
+  animation-delay: -3s;
+}
+
+.form-floater--5 {
+  top: 48%;
+  left: 4%;
+  width: clamp(36px, 6vw, 54px);
+  transform: rotate(8deg);
+  animation-duration: 8.5s;
+  animation-delay: -4s;
+  opacity: 0.34;
+}
+
+@keyframes formFloaterDrift {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -10px;
+  }
+}
+
+.form-hero-img {
+  position: absolute;
+  width: min(78%, 520px);
+  height: auto;
+  object-fit: contain;
+  top: 50%;
+  left: 50%;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.35));
+  z-index: 1;
+  pointer-events: none;
+  animation: formHeroDishFloat 7s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes formHeroDishFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -48%);
+  }
+  50% {
+    transform: translate(-50%, calc(-48% - 14px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-hero-img {
+    animation: none;
+    transform: translate(-50%, -48%);
+  }
+
+  .form-floater {
+    animation: none;
+  }
+}
+
+.form-hero-img--burger {
+  width: min(70%, 420px);
+}
+
+.form-hero-copy {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 360px;
+  padding-bottom: 1rem;
+}
+
+.form-hero-logo {
+  width: min(180px, 55%);
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 1rem;
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+}
+
+.form-hero-tagline {
+  font-family: var(--body);
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
 }
 
 /* Right Side - Form Content */
@@ -44,34 +237,40 @@ section {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
+  background: #f4f4f5;
+  border: 1px solid rgba(47, 24, 77, 0.12);
+  border-radius: 999px;
+  min-height: 44px;
+  padding: 0.65rem 1.35rem 0.65rem 1rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
   z-index: 10;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 14px rgba(24, 24, 27, 0.08);
+  font-family: var(--body);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #2f184d;
 }
 
 .back-button:hover {
-  background: #f5f5f5;
-  border-color: var(--bg-color-one);
+  background: #2f184d;
+  border-color: #2f184d;
+  color: #fff;
   transform: translateX(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 22px rgba(47, 24, 77, 0.28);
 }
 
 .back-button svg {
-  color: #333;
-  font-size: 1.25rem;
+  color: inherit;
+  font-size: 1.8rem;
 }
 
-.back-button:hover svg {
-  color: var(--bg-color-one);
+.back-button span {
+  line-height: 1;
 }
 
 .formCard {
@@ -85,6 +284,13 @@ section {
   align-items: center;
   gap: 1rem;
   margin-bottom: 2.5rem;
+}
+
+.form-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .form-icon {
@@ -312,12 +518,13 @@ section {
   .back-button {
     top: 1.5rem;
     left: 1.5rem;
-    width: 36px;
-    height: 36px;
+    min-height: 40px;
+    padding: 0.55rem 1.15rem 0.55rem 0.9rem;
+    font-size: 1.25rem;
   }
 
   .back-button svg {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
   }
 
   .formCard {
@@ -368,12 +575,13 @@ section {
   .back-button {
     top: 1rem;
     left: 1rem;
-    width: 32px;
-    height: 32px;
+    min-height: 38px;
+    padding: 0.5rem 1rem 0.5rem 0.8rem;
+    font-size: 1.2rem;
   }
 
   .back-button svg {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .formCard {

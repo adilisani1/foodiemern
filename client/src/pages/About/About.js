@@ -1,45 +1,75 @@
-import React from 'react';
-import './About.css';
+import React from "react";
+import "./About.css";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-
     <>
-      <section className='about-wrapper'>
-        <div className='container'>
-          <div className='row rowClass text-center'>
-            <div className='col-md-12 about-section-title'>
-              <h1 className='about-title'><span>About Us</span></h1>
+      <section className="about-wrapper">
+        <div className="about-hero-shade" aria-hidden="true" />
+        <div className="about-hero-content">
+          <p className="about-eyebrow">Foodie</p>
+          <h1 className="about-title">About us</h1>
+          <p className="about-hero-text">
+            Fresh flavors, honest cooking, and meals made to be shared.
+          </p>
+        </div>
+      </section>
+
+      <section className="about-story">
+        <div className="about-story-inner">
+          <div className="about-story-intro">
+            <p className="about-kicker">Our story</p>
+            <h2>From a small kitchen to your table</h2>
+            <p>
+              What began as a street-food kitchen grew into Foodie — bold
+              flavors, quality ingredients, and food that feels like home.
+            </p>
+          </div>
+
+          <div className="about-section-wrapper">
+            <div className="about-img-wrap">
+              <img
+                src="/images/about.png"
+                className="about-img"
+                alt="Foodie kitchen"
+              />
+            </div>
+
+            <div className="about-section-text">
+              <h3>Crafted with care, served with heart</h3>
+              <p>
+                Every dish is built around fresh produce, careful seasoning, and
+                recipes refined over years of cooking for our community.
+              </p>
+              <p>
+                From everyday favorites to weekend specials, we cook with the
+                same care whether you dine in, take away, or order for delivery.
+              </p>
+              <Link to="/menu" className="about-cta">
+                Explore the menu
+              </Link>
             </div>
           </div>
+
+          <ul className="about-highlights">
+            <li className="about-highlight">
+              <span className="about-highlight-label">Fresh</span>
+              <p>Ingredients chosen daily for taste and quality.</p>
+            </li>
+            <li className="about-highlight">
+              <span className="about-highlight-label">Fast</span>
+              <p>Order in minutes and enjoy meals made to order.</p>
+            </li>
+            <li className="about-highlight">
+              <span className="about-highlight-label">Local</span>
+              <p>Street-food spirit with a modern kitchen polish.</p>
+            </li>
+          </ul>
         </div>
-      </section >
-
-
-      <div className='container'>
-        <div className='row rowClass mt-5 mb-5 text-center'>
-          {/* <h1 className='about-title text-white mb-5'>About Us</h1> */}
-          <div className='col-12 about-text text-center'>
-            <h3>Our Story - From The Start</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-          </div>
-          <div className='about-section-wrapper'>
-
-            <img src='/images/about.png' className='about-img' alt="" />
-
-            <div className='about-section-text '>
-              <h3>An Attractive Sub Heading To Continue</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
-          </div>
-
-        </div>
-      </div >
+      </section>
     </>
+  );
+};
 
-
-
-  )
-}
 export default About;

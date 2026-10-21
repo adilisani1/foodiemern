@@ -5,17 +5,21 @@
     height: calc(100% - 16px);
     overflow: hidden;
     position: fixed;
-    right: -400px;
+    right: 8px;
     top: 8px;
-    transition: right 0.5s;
+    transform: translateX(calc(100% + 24px));
+    transition: transform 0.5s;
     z-index: 1030;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .cart-modal.open {
-    right: 8px;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
 }
 
-/* Add this to your CSS */
 .overlay-backdrop {
     position: absolute;
     top: 0;
@@ -23,63 +27,46 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Adjust the opacity and color as needed */
     z-index: 3000;
-    /* Make sure it's above other content */
     display: none;
-    /* Initially hidden */
 }
 
 .cart-modal-wrapper {
     margin-right: 0px;
     height: 100%;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 16px;
     width: 400px;
     font-size: 16px;
     background-color: #fff;
-    border: 1px solid rgb(210, 217, 238);
-    box-shadow: rgba(51, 53, 72, 0.04) 8px 12px 20px, rgba(51, 53, 72, 0.02) 4px 6px 12px, rgba(51, 53, 72, 0.04) 4px 4px 8px;
+    border: 1px solid rgba(24, 24, 27, 0.08);
+    box-shadow: 0 20px 48px rgba(24, 24, 27, 0.16);
     transition: margin-right 250ms ease 0s;
 }
 
-.cart-modal-wrapper {}
-
 .cart-modal-inner {
-    /* overflow: hidden; */
     height: 100%;
-    /* scrollbar-gutter: stable; */
     overscroll-behavior: contain;
     overflow-x: hidden;
     overflow-y: auto;
     padding: 15px 20px;
-    border-radius: 12px;
+    border-radius: 16px;
 }
-
 
 .cart-modal-inner::-webkit-scrollbar {
     width: 10px;
-    background-color: #F5F5F5;
+    background-color: #f4f4f5;
 }
 
 .cart-modal-inner::-webkit-scrollbar-thumb {
-    background-color: #c1c1c1;
+    background-color: #a1a1aa;
     border-radius: 10px;
-    border: 2px solid #F5F5F5;
+    border: 2px solid #f4f4f5;
 }
 
 .cart-modal-inner::-webkit-scrollbar-thumb:hover {
-    background-color: #a8a8a8;
-
+    background-color: #71717a;
 }
-
-/* 
-.cart-modal-inner::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    background-color: #F5F5F5;
-
-} */
 
 .iCxowP {
     display: flex;
@@ -93,7 +80,6 @@
     width: 100%;
     padding: 14px 16px 16px;
     flex: 1 1;
-
 }
 
 .cart-modal-top-area {
@@ -103,7 +89,7 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
-    border-bottom: 1px solid #cccccc86;
+    border-bottom: 1px solid rgba(24, 24, 27, 0.08);
 }
 
 .laNPNA {
@@ -120,9 +106,9 @@
 }
 
 .close-cart-btn {
-    background-color: var(--btn-color);
-    transition: width 125ms ease-in-out 0s;
-    border-radius: 12px;
+    background-color: #18181b;
+    transition: background 0.25s ease;
+    border-radius: 10px;
     display: flex;
     padding: 0px;
     cursor: pointer;
@@ -136,7 +122,7 @@
 }
 
 .close-cart-btn:hover {
-    opacity: .7;
+    background-color: #ff7b5f;
 }
 
 .close-cart-btn .inner {
@@ -145,8 +131,6 @@
     margin: auto;
     display: flex;
     color: var(--white);
-
-
 }
 
 .close-cart-icon {
@@ -156,46 +140,44 @@
 .card {
     border: none;
     margin-bottom: 4rem;
-
 }
 
 .cart-card {
     padding: 1rem 2rem;
-    border-bottom: 1px solid #cccccc86;
+    border-bottom: 1px solid rgba(24, 24, 27, 0.08);
 }
-
-
 
 .cart-card-body img {
     width: 80px;
 }
 
-
 .cart-product-wrapper .cart-product-title {
     font-size: 1.4rem;
-    font-family: var(--Poppins);
-    text-transform: uppercase;
+    font-family: var(--body);
+    font-weight: 600;
+    color: #18181b;
+    text-transform: none;
 }
 
 .cart-product-wrapper .cart-qty-wrapper {
     position: relative;
-
 }
 
 .cart-qty-wrapper .add-sub {
     border: none;
     background: none;
-    /* padding: 0 .6rem; */
 }
 
 .cart-qty-wrapper .cart-product-qty {
     padding: 0rem .5rem;
-    /* border: 1px solid #eee; */
+    font-family: var(--body);
 }
 
 .cart-product-price {
-    font-family: var(--Poppins);
+    font-family: var(--display);
     font-size: 1.6rem;
+    font-weight: 700;
+    color: #18181b;
 }
 
 .delete-cart-item {
@@ -205,12 +187,12 @@
 
 .delete-cart-icon {
     font-size: 2rem !important;
-    color: var(--black);
+    color: #3f3f46;
     cursor: pointer;
 }
 
 .delete-cart-icon:hover {
-    color: var(--color-two)
+    color: #ff7b5f;
 }
 
 .order-total {
@@ -222,32 +204,37 @@
 .order-total span {
     font-size: 18px;
     font-weight: 700;
-    font-family: var(--Poppins);
+    font-family: var(--display);
+    color: #18181b;
 }
 
 .order-total h6 {
     font-size: 18px;
     font-weight: 500;
-    font-family: var(--Poppins);
+    font-family: var(--body);
+    color: #52525b;
 }
 
 .view-cart {
     display: inherit;
-    background-color: var(--color-two);
+    background-color: #ff7b5f;
     color: white;
     padding: 1rem;
     width: 100%;
     border: none;
     align-items: center;
-    font-family: var(--Poppins);
-    border-radius: 10px;
+    font-family: var(--body);
+    font-weight: 650;
+    border-radius: 999px;
     font-size: 1.7rem;
     justify-content: center;
+    box-shadow: 0 10px 24px rgba(255, 123, 95, 0.28);
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .view-cart:hover {
-    background-color: var(--btn-color);
-
+    background-color: #ff6a45;
+    transform: translateY(-1px);
 }
 
 .cart-footer {
@@ -256,6 +243,7 @@
   background: #fff;
   padding: 25px 10px;
 }
+
 .cart-header-actions {
   display: flex;
   align-items: center;
@@ -263,31 +251,27 @@
 }
 
 .clear-cart-btn {
-  background-color: #dddddd;
-  border: none;
-  color: var(--black);
+  background-color: #f4f4f5;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  color: #3f3f46;
   font-weight: 600;
   cursor: pointer;
-   justify-content: center;
-  transition: color 0.2s ease;
+  justify-content: center;
+  transition: color 0.2s ease, background 0.2s ease;
   align-items: center;
-    font-family: var(--Poppins);
-    border-radius: 10px;
-    font-size: 1.7rem;
-        width: 100%;
-        padding: 1rem;
-
-            display: inherit;
-
-
+  font-family: var(--body);
+  border-radius: 999px;
+  font-size: 1.7rem;
+  width: 100%;
+  padding: 1rem;
+  display: inherit;
 }
 
 .clear-cart-btn:hover {
-  color: red;
-    background-color: #ebd3d3;
-
+  color: #b91c1c;
+  background-color: #fef2f2;
+  border-color: #fecaca;
 }
-
 
 @media (max-width: 1024px) {
     .cart-modal-wrapper {
@@ -296,16 +280,15 @@
 
     .cart-modal-inner {
         padding: 15px 10px;
-
     }
 
     .view-cart {
         width: 95%;
         margin: 0 auto;
-
     }
+
     .clear-cart-btn {
-          width: 95%;
+        width: 95%;
         margin: 0 auto;
     }
 }
@@ -317,7 +300,6 @@
 
     .cart-modal-inner {
         padding: 12px 5px;
-
     }
 
     .close-cart-icon {
@@ -325,30 +307,24 @@
     }
 
     .cart-product-price {
-
         font-size: 1.4rem;
     }
 
-
     .delete-cart-icon {
         font-size: 1.7rem !important;
-
     }
 
     .cart-card-body img {
         width: 65px;
     }
 
-
     .cart-product-wrapper .cart-product-title {
         font-size: 1.3rem;
-
     }
 
     .cart-qty-wrapper .cart-product-qty {
         padding: 0rem .4rem;
         font-size: 1.4rem;
-
     }
 
     .order-total {
@@ -357,12 +333,10 @@
 
     .order-total span {
         font-size: 15px;
-
     }
 
     .order-total h6 {
         font-size: 15px;
-
     }
 
     .view-cart {
@@ -370,8 +344,9 @@
         margin: 0 auto;
         font-size: 1.4rem;
     }
-     .clear-cart-btn {
-           width: 90%;
+
+    .clear-cart-btn {
+        width: 90%;
         margin: 0 auto;
         font-size: 1.4rem;
     }

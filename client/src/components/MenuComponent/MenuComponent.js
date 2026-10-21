@@ -14,7 +14,7 @@ const MenuComponent = ({ dishes }) => {
         < >
 
             <div className='menu-t'>
-                <h2 className='menu-title'>Menu</h2>
+                <h2 className='menu-title'>Our menu</h2>
             </div>
             <section
                 className="our-menu section repeat-img" id="menu">
@@ -145,11 +145,11 @@ const MenuComponent = ({ dishes }) => {
                 <div className='container'>
                     <div className='row align-items-center justify-content-center'>
                         <div className='banner-text col-md-6'>
-                            <h2 >Get a 20% Discount</h2>
-                            <span>Special Food Every Time </span>
-                            <p className='center-banner-text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. </p>
-                            <div className='d-flex align-items-center'>
-                                <button className='order-now'>Order Now</button>
+                            <h2>Get a 20% discount</h2>
+                            <span>Special food every time</span>
+                            <p className='center-banner-text'>Fresh picks and bold flavors — order your favorites and enjoy a meal made for you.</p>
+                            <div className='d-flex align-items-center flex-wrap'>
+                                <a href="#menu" className='order-now'>Order Now</a>
                                 <h3>$299.00</h3>
                             </div>
                         </div>
@@ -161,15 +161,15 @@ const MenuComponent = ({ dishes }) => {
             </div>
 
 
-            {/* <!--CUSTOMER SlIDER HEADING--> */}
-            <section className="container">
-                <div className="col-12 text-center">
-                    <h2 className="section-title-className">CUSTOMER REVIEWS</h2>
+            <section className="container reviews-wrap">
+                <div className="row justify-content-center">
+                    <div className="col-12 text-center">
+                        <h2 className="section-title-className">Customer reviews</h2>
+                    </div>
                 </div>
             </section>
 
-            <section className="container-fluid">
-                {/* <!-- CUSTOMERS SLIDERS --> */}
+            <section className="container-fluid reviews-slider">
                 <CustomerSlider />
             </section>
 

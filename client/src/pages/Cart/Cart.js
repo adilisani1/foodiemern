@@ -25,6 +25,7 @@ function Cart({ isCartModalOpen, setIsCartModalOpen }) {
   };
 
   const handleViewCartClick = () => {
+    setIsCartModalOpen(false);
     navigate("/checkout");
   };
 

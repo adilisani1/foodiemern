@@ -1,253 +1,213 @@
-/* .footerRow {
-    justify-content: center;
-
-
-} */
 .footer-wrapper {
-
-    position: relative;
+  position: relative;
 }
 
 .footer-top {
-    display: flex;
-    background-color: #1b1717;
-    color: var(--white);
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 2rem;
+  display: flex;
+  background-color: #18181b;
+  color: var(--white);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  border-top: 1px solid rgba(63, 63, 70, 0.6);
 }
 
 .opening-hours {
-    position: relative;
-
-    /* border-right: 1px solid #ccc; */
+  position: relative;
 }
 
 .opening-hours h3 {
-    /* text-align: left; */
-    font-family: var(--Poppins);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
+  font-family: var(--display);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  text-transform: none;
 }
 
 .opening-hours ul {
-    text-align: left;
-    list-style: none;
-    padding-left: 0rem !important;
+  text-align: left;
+  list-style: none;
+  padding-left: 0 !important;
 }
 
 .opening-hours ul li:nth-child(1) {
-    font-size: 1.5rem;
-    color: orange;
-    font-weight: 400;
+  font-size: 1.45rem;
+  color: #ff7b5f;
+  font-weight: 500;
+  font-family: var(--body);
 }
 
 .opening-hours ul li {
-    font-size: 1.5rem;
-    color: grey;
-    font-weight: 400;
+  font-size: 1.45rem;
+  color: #a1a1aa;
+  font-weight: 400;
+  font-family: var(--body);
+  margin-bottom: 0.55rem;
 }
 
 .stay-in-touch {
-    text-align: center;
-    padding: 0 2rem;
-    border-right: 1px solid #cccccc5b;
-    border-left: 1px solid #cccccc5b;
-    padding: 0 6rem;
+  text-align: center;
+  border-right: 1px solid rgba(63, 63, 70, 0.7);
+  border-left: 1px solid rgba(63, 63, 70, 0.7);
+  padding: 0 6rem;
 }
 
 .stay-in-touch h3 {
-    font-size: 2.5rem;
-    font-family: var(--Poppins);
-    margin-bottom: 1rem;
-    text-transform: uppercase;
+  font-size: 2.4rem;
+  font-family: var(--display);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  text-transform: none;
 }
 
 .stay-in-touch p {
-    font-size: 1.3rem;
-    font-family: var(--Poppins);
-    font-weight: 400;
-
+  font-size: 1.35rem;
+  font-family: var(--body);
+  font-weight: 400;
+  color: #a1a1aa;
 }
 
 .footer-links {
-    /* border-right: 1px solid #ccc; */
-    /* text-align: right; */
-
-    display: flex;
-    flex-direction: column;
-
-
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-links h3 {
-    /* text-align: left; */
-    font-family: var(--Poppins);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-
+  font-family: var(--display);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  text-transform: none;
 }
 
 .footer-links ul {
-    /* text-align: left; */
-    list-style: none;
-    padding-left: 0rem !important;
+  list-style: none;
+  padding-left: 0 !important;
 }
 
 .footer-links ul li {
-    font-size: 1.5rem;
-    color: grey;
-    font-weight: 400;
+  font-size: 1.45rem;
+  color: #a1a1aa;
+  font-weight: 400;
+  font-family: var(--body);
+  margin-bottom: 0.55rem;
 }
 
-
-
 .subscribe {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    /* width: 400px;
-    margin: 0 auto; */
-    width: 100%;
-    align-items: center;
-    margin-bottom: 2.5rem;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 .subscribe .form-control {
-    border-radius: 50px;
-    height: 50px;
-    border: 0;
-    outline: 0;
-    color: #000000;
-    transition: all 0.4s linear;
-    padding-left: 2rem;
-    font-size: 1.4rem;
-
+  border-radius: 999px;
+  height: 50px;
+  border: 1px solid rgba(63, 63, 70, 0.9);
+  outline: 0;
+  color: #18181b;
+  transition: all 0.3s ease;
+  padding-left: 2rem;
+  font-size: 1.4rem;
+  font-family: var(--body);
+  background: #fff;
 }
 
 .subscribe .signup-btn {
-    position: absolute;
-    right: 0;
-    height: 45px;
-    width: 110px;
-    margin-right: 0.3rem;
-    /* margin-left: 10rem;
-    margin-right: 0rem; */
-    border-radius: 50px;
-    background-color: var(--btn-color);
-    color: var(--white);
-    border: none;
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    font-family: var(--Poppins);
-    font-weight: 600;
-
+  position: absolute;
+  right: 0.3rem;
+  height: 42px;
+  width: 110px;
+  border-radius: 999px;
+  background-color: #ff7b5f;
+  color: var(--white);
+  border: none;
+  text-transform: none;
+  font-size: 1.3rem;
+  font-family: var(--body);
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.25s ease;
 }
 
 .subscribe .signup-btn:hover {
-    background-color: var(--color-two);
-    color: var(--white);
-
+  background-color: #ff6a45;
+  color: var(--white);
 }
 
-.stay-in-touch .footer-social-icons {}
-
 .stay-in-touch .footer-social-icons .icons {
-    margin: 0 1.5rem;
-    padding: 1rem;
-    border: 1px solid #cccccc5b;
-    font-size: 5rem;
-    border-radius: 50px;
+  margin: 0 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(63, 63, 70, 0.9);
+  font-size: 4.5rem;
+  border-radius: 50px;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .stay-in-touch .footer-social-icons .icons:hover {
-    background-color: var(--white);
-    color: black;
+  background-color: #ff7b5f;
+  border-color: #ff7b5f;
+  color: #fff;
 }
 
-/* footer bottom */
 .footer-bottom {
-    background: #f3f3f5;
-
-    width: 100%;
-    padding: 2rem 5rem 1.5rem 5rem;
-
-
+  background: #f4f4f5;
+  width: 100%;
+  padding: 2rem 5rem 1.5rem 5rem;
 }
 
 .footer-bottom .copyright-text {
-    font-size: 1.4rem;
-    color: black;
+  font-size: 1.35rem;
+  color: #52525b;
+  font-family: var(--body);
 }
-
-.footer-bottom .payment-card-container {}
 
 .footer-bottom .payment-card-container .payment-card {
-
-    margin: 0rem 0.2rem;
-    width: 150px;
-
+  margin: 0 0.2rem;
+  width: 150px;
 }
 
-
-/* Media Query */
 @media screen and (max-width: 990px) {
+  .opening-hours {
+    margin-bottom: 2rem;
+  }
 
-    .opening-hours {
-        margin-bottom: 2rem;
-    }
+  .stay-in-touch {
+    padding: 0 2rem;
+  }
 
-    .stay-in-touch {
-        padding: 0 2rem;
-    }
-
-    .stay-in-touch h3 {
-        font-size: 2.2rem;
-    }
-
-    .stay-in-touch p {
-        font-size: 1.2rem;
-
-    }
+  .stay-in-touch h3 {
+    font-size: 2.2rem;
+  }
 }
 
 @media screen and (max-width: 767px) {
-    .stay-in-touch {
-        padding: 0;
-        border: none;
-        text-align: left;
-    }
+  .stay-in-touch {
+    padding: 0;
+    border: none;
+    text-align: left;
+  }
 
-    .stay-in-touch h3 {
-        font-size: 2.2rem;
-    }
+  .subscribe .signup-btn {
+    width: 100px;
+    font-size: 1.2rem;
+  }
 
-    .stay-in-touch p {
-        font-size: 1.2rem;
+  .stay-in-touch .footer-social-icons .icons {
+    padding: 1.2rem;
+    margin: 0.2rem 0.8rem 1.3rem;
+  }
 
-    }
+  .footer-top .d-flex {
+    justify-content: flex-start !important;
+    margin: 1.4rem 0;
+  }
 
-    .subscribe .signup-btn {
-        width: 100px;
-        font-size: 1.2rem;
-
-    }
-
-    .stay-in-touch .footer-social-icons .icons {
-
-        padding: 1.4rem;
-        margin: .2rem 1rem;
-        margin-bottom: 1.3rem;
-    }
-
-    .footer-top .d-flex {
-        justify-content: flex-start !important;
-        margin: 1.4rem 0;
-    }
-
-
-
+  .footer-bottom {
+    padding: 2rem 1.5rem;
+  }
 }

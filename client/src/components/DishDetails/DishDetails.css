@@ -1,176 +1,133 @@
-
-/*DISH DETAILS CArd
-/* **************** */
-
 .dish-details-repeat-img {
-    background-size: contain;
-    background-repeat: repeat;
-}
-
-.menu-tab-wp {
-    margin-bottom: 80px;
-}
-
-.menu-tab ul {
-    padding: 10px;
-    display: inline-block;
-    border-radius: 60px;
-    background: linear-gradient(145deg, #ececec, #ffffff);
-    box-shadow: 28px 28px 55px #d4d4d4, -28px -28px 55px #ffffff;
-    position: relative;
-    z-index: 2;
-}
-
-.menu-tab ul li,
-.menu-tab ul .filter-active {
-    display: inline-flex;
-    text-transform: capitalize;
-    font-size: 18px;
-    line-height: normal;
-    cursor: pointer;
-    padding: 10px 26px;
-    border-radius: 30px;
-    transition: 0.3s;
-    justify-content: center;
-    align-items: center;
-}
-
-.filter-active {
-    position: absolute;
-    left: 0;
-    top: 12px;
-    min-height: 50px;
-    z-index: -1;
-}
-
-.menu-tab ul li img {
-    margin-right: 10px;
-    position: relative;
-    top: 1px;
-}
-
-.menu-tab ul .filter-active {
-    color: #ffffff;
-    background: linear-gradient(145deg, #e3a92b, #ffc933);
+  background-size: contain;
+  background-repeat: repeat;
 }
 
 .menu-list-row .bydefault_show .dish-details-box-wp {
-    display: inline-block !important;
+  display: inline-block !important;
 }
 
 .dish-details-box-wp {
-    display: none;
-    margin: 170px 0 140px;
+  display: none;
+  margin: 140px 0 100px;
 }
 
 .dish-detail-box {
-    border-radius: 30px;
-    background: linear-gradient(145deg, #ececec, #ffffff);
-    box-shadow: 28px 28px 45px #d4d4d4, -28px -28px 45px #ffffff;
-    display: flow-root;
-    padding: 10px 30px 40px;
-    transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(24, 24, 27, 0.1);
+  border: 1px solid rgba(24, 24, 27, 0.06);
+  padding: 1.5rem 2rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  min-height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dish-detail-box:hover {
-    transform: scale(1.03);
-}
-
-.dish-detail-img {
-    /* margin-top: -130px; */
-    /* margin-bottom: 30px; */
+  transform: translateY(-6px);
+  box-shadow: 0 22px 48px rgba(24, 24, 27, 0.12);
 }
 
 .dish-detail-img img {
-    /* box-shadow: 28px 28px 45px #d4d4d4, -28px -28px 45px #ffffff;
-    border-radius: 50%;
-    overflow: hidden; */
-    width: 350px;
-    object-fit: contain;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 100%;
-    height: 250px;
-
+  width: 320px;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 100%;
+  height: 240px;
+  filter: drop-shadow(0 16px 28px rgba(24, 24, 27, 0.16));
 }
 
-
 .dish-information {
-    margin: 170px 0 140px;
+  margin: 140px 0 100px;
 }
 
 .dish-information .dish-sub {
-    display: flex;
-    align-items: center;
-
+  display: flex;
+  align-items: center;
 }
 
 .dish-information h2 {
-    font-family: var(--poppins);
-    font-size: 3rem;
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 4vw, 3.2rem);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  color: #18181b;
+  margin-bottom: 1rem;
 }
 
 .dish-information .dish-dec {
-    font-size: 1.5rem;
-    font-family: var(--poppins);
+  font-size: 1.5rem;
+  font-family: var(--body);
+  color: #71717a;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
 }
 
 .dish-information .dish-price {
-    font-size: 2.3rem;
-    font-family: var(--poppins);
+  font-size: 2.4rem;
+  font-family: var(--display);
+  font-weight: 750;
+  color: #18181b;
+  letter-spacing: -0.02em;
 }
 
 .dish-information span {
-    font-size: 1.9rem;
-    font-family: var(--poppins);
-    margin: 0 1rem;
+  font-size: 1.8rem;
+  font-family: var(--body);
+  margin: 0 1rem;
+  color: #3f3f46;
+  font-weight: 600;
 }
 
 .dish-information .qty-btn {
-    font-size: 1.7rem;
-    background-color: var(--color-two);
-    color: var(--white);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
+  font-size: 1.7rem;
+  background-color: #18181b;
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.dish-information .qty-btn:hover {
+  background-color: #ff7b5f;
 }
 
 .add-btn-dish {
-    font-size: 1.7rem;
-    background-color: var(--color-two);
-    color: var(--white);
-
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    margin: 2rem 0rem;
+  font-size: 1.5rem;
+  background-color: #ff7b5f;
+  color: var(--white);
+  padding: 1.15rem 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  margin: 2rem 0;
+  font-family: var(--body);
+  font-weight: 650;
+  box-shadow: 0 12px 28px rgba(255, 123, 95, 0.3);
+  transition: transform 0.3s ease, background 0.25s ease;
 }
 
 .add-btn-dish:hover {
-    opacity: 0.8;
-
+  background: #ff6a45;
+  transform: translateY(-2px);
 }
 
 .info-text {
-    font-size: 17px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.45rem;
+  font-family: var(--body);
+  color: #71717a;
 }
-

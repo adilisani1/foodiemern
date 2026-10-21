@@ -6,7 +6,10 @@ const OrderCompleted = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        window.dispatchEvent(new Event("orderPlaced"));
+
         const timer = setTimeout(() => {
+            window.dispatchEvent(new Event("orderPlaced"));
             navigate('/');
         }, 6000);
 

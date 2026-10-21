@@ -1,32 +1,49 @@
 .order-completed {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: var(--black);
-    font-family: var(--Poppins);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  color: #fafafa;
+  font-family: var(--body);
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(255, 123, 95, 0.18) 0%, transparent 50%),
+    linear-gradient(165deg, #18181b 0%, #09090b 100%);
 }
 
 .order-completed h1 {
-    font-size: 4.5rem;
-    margin-bottom: 2rem;
+  font-family: var(--display);
+  font-size: clamp(3.6rem, 7vw, 5.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
 }
 
 .order-completed p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+  color: rgba(250, 250, 250, 0.7);
+  max-width: 36ch;
+  line-height: 1.55;
 }
 
 .redirect {
-    font-size: 3rem;
-    color: rgb(255, 255, 255);
-    padding: 14px 20px;
-    border-radius: 5px;
-    background-color: rgb(226, 102, 0);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 1.15rem 1.9rem;
+  border-radius: 999px;
+  background-color: #ff7b5f;
+  box-shadow: 0 12px 28px rgba(255, 123, 95, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.redirect p {
+  margin: 0;
+  color: #fff;
+  font-size: 1.35rem;
 }

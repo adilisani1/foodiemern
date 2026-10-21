@@ -77,12 +77,17 @@ const Signup = () => {
         
         {/* Left Side - Form */}
         <div className="form-content-side">
-          <button className="back-button" onClick={() => navigate("/")}>
+          <button type="button" className="back-button" onClick={() => navigate("/")}>
             <ArrowBackIcon />
+            <span>Back</span>
           </button>
           <div className="formCard">
             <div className="form-header">
-              <div className="form-icon"></div>
+              <img
+                src="/images/foood-logo-black.png"
+                alt="Foodie"
+                className="form-logo"
+              />
               <h1>Create an account</h1>
             </div>
             
@@ -157,8 +162,31 @@ const Signup = () => {
             </div>
           </div>
         </div>
-        {/* Right Side - Hero Background */}
-        <div className="form-hero-side"></div>
+        <div className="form-hero-side">
+          <div className="form-hero-shade" aria-hidden="true" />
+          <div className="form-hero-floaters" aria-hidden="true">
+            <img src="/images/pizza-r.png" alt="" className="form-floater form-floater--1" />
+            <img src="/images/fries-r.png" alt="" className="form-floater form-floater--2" />
+            <img src="/images/noodle-r.png" alt="" className="form-floater form-floater--3" />
+            <img src="/images/desert-r.png" alt="" className="form-floater form-floater--4" />
+            <img src="/images/drinks-r.png" alt="" className="form-floater form-floater--5" />
+          </div>
+          <img
+            src="/images/burger-3d.png"
+            alt=""
+            className="form-hero-img form-hero-img--burger"
+          />
+          <div className="form-hero-copy">
+            <img
+              src="/images/foood-logo.png"
+              alt="Street Food"
+              className="form-hero-logo"
+            />
+            <p className="form-hero-tagline">
+              Join us and order your favorites in minutes.
+            </p>
+          </div>
+        </div>
 
       </div>
     </section>
