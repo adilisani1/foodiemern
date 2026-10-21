@@ -70,7 +70,7 @@
   font-family: var(--display);
   font-weight: 800;
   color: var(--white);
-  line-height: 1.05 !important;
+  line-height: 1.25 !important;
   letter-spacing: -0.03em;
   max-width: 12ch;
 }

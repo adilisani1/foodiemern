@@ -120,17 +120,17 @@ const Navbar = ({
           <div className="sign-buttons">
             {user ? (
               <div className="user-section">
-                <button className="btn sign-out" onClick={handleLogout}>
+                <button type="button" className="btn sign-out" onClick={handleLogout}>
                   Sign Out
                 </button>
               </div>
             ) : (
               <>
                 <Link className="formBtn" to="/login" onClick={handleNavClick}>
-                  <button className="btn sign-in">Sign In</button>
+                  <span className="btn sign-in">Sign In</span>
                 </Link>
                 <Link className="formBtn" to="/signup" onClick={handleNavClick}>
-                  <button className="btn sign-up">Sign Up</button>
+                  <span className="btn sign-up">Sign Up</span>
                 </Link>
               </>
             )}
@@ -146,10 +146,15 @@ const Navbar = ({
           </span>
         </div>
 
-        <div className="mobile-menu" onClick={toggleNavbar}>
+        <button
+          type="button"
+          className="mobile-menu"
+          aria-label={showNav ? "Close menu" : "Open menu"}
+          onClick={toggleNavbar}
+        >
           <DragHandleIcon className="menu-icon" />
           <CloseIcon className="close-icon" />
-        </div>
+        </button>
       </header>
 
       <Cart
