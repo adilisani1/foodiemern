@@ -17,7 +17,9 @@ section {
 
 /* Left Side - Hero Background */
 .form-hero-side {
-  background: #2f184d;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% -10%, rgba(137, 115, 175, 0.5) 0%, transparent 60%),
+    #2f184d;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -27,64 +29,7 @@ section {
 }
 
 .form-hero-shade {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.form-hero-shade::before {
-  content: "";
-  position: absolute;
-  width: 75vmax;
-  height: 55vmax;
-  top: -35%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(137, 115, 175, 0.95) 0%,
-    rgba(87, 68, 130, 0.65) 40%,
-    transparent 70%
-  );
-  filter: blur(260px);
-  animation: formHeroLightShift 14s ease-in-out infinite alternate;
-}
-
-.form-hero-shade::after {
-  content: "";
-  position: absolute;
-  width: 50vmax;
-  height: 40vmax;
-  top: -18%;
-  right: 5%;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(168, 140, 220, 0.85) 0%,
-    rgba(87, 68, 130, 0.5) 45%,
-    transparent 70%
-  );
-  filter: blur(280px);
-  animation: formHeroLightShift 16s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes formHeroLightShift {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.95;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .form-hero-shade::before,
-  .form-hero-shade::after {
-    animation: none;
-  }
+  display: none;
 }
 
 .form-hero-floaters {
@@ -100,16 +45,14 @@ section {
   width: clamp(44px, 8vw, 72px);
   height: auto;
   object-fit: contain;
-  opacity: 0.4;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
-  animation: formFloaterDrift 9s ease-in-out infinite;
+  opacity: 0.36;
+  animation: none;
 }
 
 .form-floater--1 {
   top: 12%;
   left: 8%;
   transform: rotate(-16deg);
-  animation-duration: 8s;
 }
 
 .form-floater--2 {
@@ -117,8 +60,6 @@ section {
   right: 10%;
   width: clamp(40px, 7vw, 64px);
   transform: rotate(14deg);
-  animation-duration: 10s;
-  animation-delay: -1.5s;
 }
 
 .form-floater--3 {
@@ -126,8 +67,6 @@ section {
   left: 6%;
   width: clamp(48px, 8.5vw, 76px);
   transform: rotate(10deg);
-  animation-duration: 9.5s;
-  animation-delay: -2.5s;
 }
 
 .form-floater--4 {
@@ -135,8 +74,6 @@ section {
   right: 8%;
   width: clamp(38px, 6.5vw, 60px);
   transform: rotate(-12deg);
-  animation-duration: 11s;
-  animation-delay: -3s;
 }
 
 .form-floater--5 {
@@ -144,19 +81,7 @@ section {
   left: 4%;
   width: clamp(36px, 6vw, 54px);
   transform: rotate(8deg);
-  animation-duration: 8.5s;
-  animation-delay: -4s;
-  opacity: 0.34;
-}
-
-@keyframes formFloaterDrift {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 0 -10px;
-  }
+  opacity: 0.3;
 }
 
 .form-hero-img {
@@ -166,32 +91,11 @@ section {
   object-fit: contain;
   top: 50%;
   left: 50%;
-  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.35));
+  transform: translate(-50%, -48%);
+  filter: none;
   z-index: 1;
   pointer-events: none;
-  animation: formHeroDishFloat 7s ease-in-out infinite;
-  transform-origin: center center;
-}
-
-@keyframes formHeroDishFloat {
-  0%,
-  100% {
-    transform: translate(-50%, -48%);
-  }
-  50% {
-    transform: translate(-50%, calc(-48% - 14px));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .form-hero-img {
-    animation: none;
-    transform: translate(-50%, -48%);
-  }
-
-  .form-floater {
-    animation: none;
-  }
+  animation: none;
 }
 
 .form-hero-img--burger {
@@ -212,7 +116,7 @@ section {
   object-fit: contain;
   margin: 0 auto 1rem;
   display: block;
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+  filter: none;
 }
 
 .form-hero-tagline {

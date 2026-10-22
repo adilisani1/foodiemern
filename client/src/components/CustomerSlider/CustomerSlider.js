@@ -1,51 +1,56 @@
-import React, { useEffect } from 'react';
-import Swiper from 'swiper';
+import React, { useEffect, useRef } from 'react';
+import Swiper from 'swiper/bundle';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import "./CustomerSlider.css";
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import 'swiper/css/bundle';
 
 const CustomerSlider = () => {
+    const swiperRef = useRef(null);
 
     useEffect(() => {
-        new Swiper('.slider-content', {
+        if (swiperRef.current) {
+            swiperRef.current.destroy(true, true);
+        }
+
+        swiperRef.current = new Swiper('.slider-content', {
             slidesPerView: 3,
             spaceBetween: 60,
-            // loop: true,
-            // fade: true,
-            centeredSlide: true,
-            // loopFillGroupWithBlank: true,
+            loop: true,
+            centeredSlides: false,
             autoplay: {
-                delay: 5000,
-
+                delay: 3500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
             },
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true,
                 dynamicBullets: true,
-
             },
-            navigation: {
-                // nextEl: ".swiper-button-next",
-                // prevEl: ".swiper-button-prev",
-            },
-
             breakpoints: {
                 0: {
                     slidesPerView: 1,
+                    spaceBetween: 20,
                 },
                 768: {
                     slidesPerView: 2,
+                    spaceBetween: 36,
                 },
                 991: {
                     slidesPerView: 3,
+                    spaceBetween: 48,
                 },
             },
         });
-    }, [])
+
+        return () => {
+            if (swiperRef.current) {
+                swiperRef.current.destroy(true, true);
+                swiperRef.current = null;
+            }
+        };
+    }, []);
 
 
     return (

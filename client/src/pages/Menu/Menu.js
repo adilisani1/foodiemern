@@ -4,6 +4,7 @@ import "./Menu.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
+import { getDishCalories, getDishPersons, getDishType } from "../../utils/dishMeta";
 
 const Menu = ({ dishes }) => {
   const dispatch = useDispatch();
@@ -41,17 +42,17 @@ const Menu = ({ dishes }) => {
                       </Link>
                       <div className="dish-title">
                         <h3 className="h3-title">{item.title}</h3>
-                        <p>120 calories</p>
+                        <p>{getDishCalories(item.category)} calories</p>
                       </div>
                       <div className="dish-info">
                         <ul>
                           <li>
                             <p>Type</p>
-                            <b>Non Veg</b>
+                            <b>{getDishType(item.title, item.category)}</b>
                           </li>
                           <li>
                             <p>Persons</p>
-                            <b>2</b>
+                            <b>{getDishPersons(item.category)}</b>
                           </li>
                         </ul>
                       </div>

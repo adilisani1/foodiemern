@@ -10,15 +10,16 @@
   padding: 1.25rem max(4rem, calc((100% - 1440px) / 2 + 4rem));
   justify-content: space-between;
   background: transparent;
-  transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
-  backdrop-filter: blur(10px);
+  transition: background 0.25s ease, padding 0.25s ease, box-shadow 0.25s ease;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .header-wrap.show {
-  background: rgba(24, 24, 27, 0.94);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(24, 24, 27, 0.96);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
   padding: 1rem max(4rem, calc((100% - 1440px) / 2 + 4rem));
 }
 
@@ -142,12 +143,12 @@
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: none;
   color: #fafafa;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .cart-icon .cart svg {
@@ -192,10 +193,10 @@
   z-index: 1001;
   padding: 0.35rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .sign-in {

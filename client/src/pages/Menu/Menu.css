@@ -65,14 +65,38 @@
 
 @media screen and (max-width: 990px) {
   .menu-wrapper {
-    min-height: 42vh;
-    margin-bottom: 7rem;
-    padding: 10rem 2rem 3.5rem;
+    min-height: 38vh;
+    margin-bottom: 6rem;
+    padding: 10rem 2rem 3.25rem;
+  }
+
+  .menu-page-title {
+    font-size: 3.4rem;
+  }
+
+  .menu-hero-text {
+    font-size: 1.4rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .menu-wrapper {
-    margin-bottom: 6rem;
+    min-height: auto;
+    margin-bottom: 4.5rem;
+    padding: 8.5rem 1.35rem 2.75rem;
+  }
+
+  .menu-eyebrow {
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .menu-page-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .menu-hero-text {
+    font-size: 1.25rem;
   }
 }

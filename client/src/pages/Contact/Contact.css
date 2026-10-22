@@ -247,11 +247,40 @@
   .contact-page-wrapper {
     padding: 10rem 0 5rem;
   }
+
+  .contact-main-title {
+    font-size: 3.3rem;
+  }
+
+  .contact-intro {
+    font-size: 1.4rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
+  .contact-page-wrapper {
+    padding: 8.5rem 0 4rem;
+  }
+
   .contact-main-container {
     padding: 0 1.25rem;
+  }
+
+  .contact-header {
+    margin-bottom: 3rem;
+  }
+
+  .contact-eyebrow {
+    font-size: 1rem;
+  }
+
+  .contact-main-title {
+    font-size: 2.45rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-intro {
+    font-size: 1.25rem;
   }
 
   .contact-form-section,

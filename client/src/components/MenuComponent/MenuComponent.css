@@ -84,7 +84,7 @@
   margin: 0 auto;
   max-width: 100%;
   height: 190px;
-  filter: drop-shadow(0 16px 28px rgba(24, 24, 27, 0.16));
+  filter: none;
   transition: transform 0.4s ease;
 }
 
@@ -389,8 +389,24 @@
 
 .reviews-wrap .col-12 {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+.reviews-header .section-title-className {
+  margin-bottom: 1rem;
+}
+
+.reviews-subtitle {
+  font-family: var(--body);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #71717a;
+  line-height: 1.65;
+  max-width: 46ch;
+  margin: 0 auto;
 }
 
 .reviews-slider {
@@ -400,30 +416,270 @@
 
 @media (max-width: 990px) {
   .menu-t {
-    margin: 2rem 0 9rem;
+    margin: 2rem 0 8rem;
+  }
+
+  .menu-title {
+    font-size: 3rem;
   }
 
   .dish-box {
-    margin-bottom: 90px;
+    margin: 28px 0 88px;
+    padding: 10px 22px 26px;
   }
-}
 
-@media (max-width: 640px) {
-  .banner-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    margin-bottom: 12px;
+  .dist-img {
+    margin-top: -96px;
+    margin-bottom: 18px;
+  }
+
+  .dist-img img {
+    width: 200px;
+    height: 170px;
+  }
+
+  .dish-title .h3-title {
+    font-size: 1.75rem;
+    min-height: 56px;
+  }
+
+  .dist-bottom-row ul li b {
+    font-size: 2.1rem;
+  }
+
+  .main-text {
+    padding: 1.6rem;
+  }
+
+  .main-text .big-text-title {
+    font-size: 3.2rem;
+  }
+
+  .main-text .big-text-discount {
+    font-size: 1.8rem;
+  }
+
+  .main-text h3 {
+    font-size: 2rem;
+  }
+
+  .main-text span {
+    font-size: 1.3rem;
+  }
+
+  .main-text p,
+  .big-week .big-week-text {
+    font-size: 1.3rem;
+  }
+
+  .banner-text h2 {
+    font-size: 3rem;
+  }
+
+  .banner-text span {
+    font-size: 1.45rem;
+  }
+
+  .banner-text p,
+  .center-banner-text {
+    font-size: 1.35rem;
+  }
+
+  .banner-text h3 {
+    font-size: 1.75rem;
+  }
+
+  .order-now {
+    font-size: 1.25rem;
+    padding: 1rem 1.4rem;
+    margin-right: 1rem;
   }
 
   .center-banner-img {
     height: auto;
-    min-height: 52vh;
-    padding: 3rem 0;
+    min-height: 0;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+    padding: 3.5rem 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .menu-t {
+    margin: 1.5rem 0 6.5rem;
+  }
+
+  .menu-title {
+    font-size: 2.4rem;
+  }
+
+  .all-dishes {
+    padding: 6rem 0 4rem;
+  }
+
+  .dish-box {
+    margin: 20px 0 72px;
+    padding: 8px 16px 22px;
+    border-radius: 18px;
+  }
+
+  .dist-img {
+    margin-top: -78px;
+    margin-bottom: 12px;
+  }
+
+  .dist-img img {
+    width: 160px;
+    height: 140px;
+  }
+
+  .dish-title,
+  .dish-info,
+  .dist-bottom-row {
+    padding: 0 0.5rem;
+  }
+
+  .dish-title .h3-title {
+    font-size: 1.55rem;
+    min-height: 0;
+    margin-bottom: 4px;
+  }
+
+  .dish-title p {
+    font-size: 1.1rem;
+  }
+
+  .dish-info {
+    margin: 1.25rem 0 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .dish-info ul li p {
+    font-size: 1.1rem;
+  }
+
+  .dish-info ul li b {
+    font-size: 1.2rem;
+  }
+
+  .dist-bottom-row ul li b {
+    font-size: 1.85rem;
+  }
+
+  .dish-add-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .banner {
+    margin-top: 0.75rem;
+    border-radius: 14px;
+  }
+
+  .discount-img {
+    border-radius: 14px;
+  }
+
+  .main-text {
+    padding: 1.15rem 1.25rem;
+  }
+
+  .main-text .big-text-title {
+    font-size: 2.4rem;
+    line-height: 1.15;
+  }
+
+  .main-text .big-text-discount {
+    font-size: 1.35rem;
+  }
+
+  .main-text h3 {
+    font-size: 1.7rem;
+    line-height: 1.15;
+  }
+
+  .main-text span {
+    font-size: 1.15rem;
+  }
+
+  .main-text p {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .big-week .big-week-text {
+    font-size: 1.1rem;
+  }
+
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .banner-text h2 {
+    font-size: 2.35rem;
+    line-height: 1.2;
+  }
+
+  .banner-text span {
+    font-size: 1.2rem;
+    letter-spacing: 0.06em;
+  }
+
+  .banner-text p,
+  .center-banner-text {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  .banner-text h3 {
+    font-size: 1.6rem;
+  }
+
+  .banner-text .d-flex {
+    justify-content: center;
+    gap: 0.85rem 1.15rem;
+    width: 100%;
   }
 
   .order-now {
-    margin-bottom: 1rem;
+    margin-right: 0;
+    margin-bottom: 0;
+    font-size: 1.15rem;
+    padding: 0.95rem 1.35rem;
+    min-width: 120px;
+  }
+
+  .center-banner-img {
+    height: auto;
+    min-height: 0;
+    padding: 2.75rem 0 2.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title-className {
+    font-size: 2.2rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .reviews-wrap {
+    margin: 3rem auto 1.25rem;
+  }
+
+  .reviews-subtitle {
+    font-size: 1.25rem;
+    max-width: 34ch;
+    padding: 0 0.5rem;
+  }
+
+  .reviews-slider {
+    margin-bottom: 3.5rem;
   }
 }

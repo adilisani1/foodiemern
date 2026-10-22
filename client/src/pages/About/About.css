@@ -232,8 +232,24 @@
 
 @media screen and (max-width: 990px) {
   .about-wrapper {
-    min-height: 44vh;
-    padding: 10rem 2rem 4rem;
+    min-height: 40vh;
+    padding: 10rem 2rem 3.5rem;
+  }
+
+  .about-title {
+    font-size: 3.3rem;
+  }
+
+  .about-hero-text {
+    font-size: 1.45rem;
+  }
+
+  .about-story-intro h2 {
+    font-size: 2.8rem;
+  }
+
+  .about-section-text h3 {
+    font-size: 2.2rem;
   }
 
   .about-section-wrapper {
@@ -263,8 +279,27 @@
 }
 
 @media screen and (max-width: 600px) {
+  .about-wrapper {
+    min-height: auto;
+    padding: 8.5rem 1.35rem 2.75rem;
+  }
+
+  .about-eyebrow {
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .about-title {
+    font-size: 2.45rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .about-hero-text {
+    font-size: 1.25rem;
+  }
+
   .about-story {
-    padding: 4.5rem 0 5.5rem;
+    padding: 4rem 0 4.5rem;
   }
 
   .about-story-inner {
@@ -272,11 +307,43 @@
   }
 
   .about-story-intro {
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .about-kicker {
+    font-size: 1rem;
+  }
+
+  .about-story-intro h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-story-intro p {
+    font-size: 1.3rem;
+  }
+
+  .about-section-text h3 {
+    font-size: 1.9rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .about-section-text p {
+    font-size: 1.3rem;
+  }
+
+  .about-highlight-label {
+    font-size: 1.05rem;
+  }
+
+  .about-highlight p {
+    font-size: 1.25rem;
   }
 
   .about-cta {
     width: 100%;
     justify-content: center;
+    font-size: 1.2rem;
+    padding: 1.1rem 2rem;
   }
 }

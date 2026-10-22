@@ -5,6 +5,7 @@ import "./MenuComponent.css";
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
+import { getDishCalories, getDishPersons, getDishType } from '../../utils/dishMeta';
 
 const MenuComponent = ({ dishes }) => {
 
@@ -37,17 +38,17 @@ const MenuComponent = ({ dishes }) => {
                                             </Link>
                                             <div className="dish-title">
                                                 <h3 className="h3-title">{item.title}</h3>
-                                                <p>120 calories</p>
+                                                <p>{getDishCalories(item.category)} calories</p>
                                             </div>
                                             <div className="dish-info">
                                                 <ul>
                                                     <li>
                                                         <p>Type</p>
-                                                        <b>Non Veg</b>
+                                                        <b>{getDishType(item.title, item.category)}</b>
                                                     </li>
                                                     <li>
                                                         <p>Persons</p>
-                                                        <b>2</b>
+                                                        <b>{getDishPersons(item.category)}</b>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -163,8 +164,11 @@ const MenuComponent = ({ dishes }) => {
 
             <section className="container reviews-wrap">
                 <div className="row justify-content-center">
-                    <div className="col-12 text-center">
+                    <div className="col-12 text-center reviews-header">
                         <h2 className="section-title-className">Customer reviews</h2>
+                        <p className="reviews-subtitle">
+                            Real feedback from foodies who ordered with us fresh meals, fast delivery, and flavors worth coming back for.
+                        </p>
                     </div>
                 </div>
             </section>

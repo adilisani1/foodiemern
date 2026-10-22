@@ -48,10 +48,9 @@
   color: var(--white);
   font-size: 3.4rem !important;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   padding: 0.35rem;
-  backdrop-filter: blur(8px);
 }
 
 .back-btn .back-icon:hover {
