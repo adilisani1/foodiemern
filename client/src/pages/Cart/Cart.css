@@ -319,12 +319,12 @@
     }
 
     .cart-product-wrapper .cart-product-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .cart-qty-wrapper .cart-product-qty {
         padding: 0rem .4rem;
-        font-size: 1.4rem;
+        font-size: 1.25rem;
     }
 
     .order-total {
@@ -342,12 +342,12 @@
     .view-cart {
         width: 90%;
         margin: 0 auto;
-        font-size: 1.4rem;
+        font-size: 1.25rem;
     }
 
     .clear-cart-btn {
         width: 90%;
         margin: 0 auto;
-        font-size: 1.4rem;
+        font-size: 1.25rem;
     }
 }

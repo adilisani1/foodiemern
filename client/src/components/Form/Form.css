@@ -502,35 +502,35 @@ section {
   }
 
   .formCard h1 {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
 
   .form-group label {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .form-control {
     height: 3.5rem;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     padding: 0 1.25rem;
   }
 
   .form-control::placeholder {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .form-submit-btn {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     padding: 1rem 1.25rem;
   }
 
   .form-footer span,
   .form-link {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .form-text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .form-footer {

@@ -2,7 +2,7 @@
   position: relative;
   min-height: 52vh;
   width: 100%;
-  margin-bottom: 8rem;
+  margin-bottom: 10rem;
   display: flex;
   align-items: flex-end;
   padding: 12rem max(3rem, calc((100% - 1200px) / 2 + 2rem)) 4.5rem;
@@ -66,7 +66,7 @@
 @media screen and (max-width: 990px) {
   .menu-wrapper {
     min-height: 38vh;
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
     padding: 10rem 2rem 3.25rem;
   }
 
@@ -82,21 +82,21 @@
 @media screen and (max-width: 600px) {
   .menu-wrapper {
     min-height: auto;
-    margin-bottom: 4.5rem;
+    margin-bottom: 7rem;
     padding: 8.5rem 1.35rem 2.75rem;
   }
 
   .menu-eyebrow {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 0.7rem;
   }
 
   .menu-page-title {
-    font-size: 2.5rem;
+    font-size: 2.15rem;
     margin-bottom: 0.85rem;
   }
 
   .menu-hero-text {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 }

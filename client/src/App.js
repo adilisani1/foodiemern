@@ -143,7 +143,7 @@ function App() {
           <Route
             exact
             path="/menu/:id"
-            element={<DishDetails singleDish={dishes} headerColor="#4d38b2" />}
+            element={<DishDetails singleDish={dishes} />}
           />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/menu" element={<Menu dishes={dishes} />} />
@@ -154,7 +154,7 @@ function App() {
           <Route
             exact
             path="/:id"
-            element={<DishDetails singleDish={dishes} headerColor="#4d38b2" />}
+            element={<DishDetails singleDish={dishes} />}
           />
           <Route
             path="/checkout"

@@ -38,6 +38,7 @@ const Checkout = () => {
     };
 
     const [paymentMethod, setPaymentMethod] = useState("cash_on_delivery");
+    const [isPlacingOrder, setIsPlacingOrder] = useState(false);
     const [formData, setFormData] = useState({
         paymentMethod: "cash_on_delivery",
         cardHolder: "",
@@ -68,21 +69,17 @@ const Checkout = () => {
         return Object.keys(errs).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        if (isPlacingOrder || isBillingDetailsEmpty()) return;
 
-        if (paymentMethod === "cash_on_delivery") {
-            dispatch(clearCart());
-            window.dispatchEvent(new Event("orderPlaced"));
-            navigate("/order-completed");
-            return;
-        }
+        if (paymentMethod !== "cash_on_delivery" && !validateForm()) return;
 
-        if (validateForm()) {
-            dispatch(clearCart());
-            window.dispatchEvent(new Event("orderPlaced"));
-            navigate("/order-completed");
-        }
+        setIsPlacingOrder(true);
+        await new Promise((resolve) => setTimeout(resolve, 1600));
+        dispatch(clearCart());
+        window.dispatchEvent(new Event("orderPlaced"));
+        navigate("/order-completed");
     };
 
     function renderCreditCardForm() {
@@ -377,11 +374,18 @@ const Checkout = () => {
                   </p>
                   <button
                     type="submit"
-                    className="place-order-btn"
-                    disabled={isBillingDetailsEmpty()}
+                    className={`place-order-btn${isPlacingOrder ? " is-loading" : ""}`}
+                    disabled={isBillingDetailsEmpty() || isPlacingOrder}
                     onClick={handleSubmit}
                   >
-                    Place Order
+                    {isPlacingOrder ? (
+                      <>
+                        <span className="place-order-spinner" aria-hidden="true" />
+                        Placing order...
+                      </>
+                    ) : (
+                      "Place Order"
+                    )}
                   </button>
                 </div>
               </div>

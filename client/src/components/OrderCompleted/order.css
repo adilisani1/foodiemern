@@ -47,3 +47,27 @@
   color: #fff;
   font-size: 1.35rem;
 }
+
+@media (max-width: 640px) {
+  .order-completed {
+    padding: 1.5rem;
+  }
+
+  .order-completed h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .order-completed p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .redirect {
+    padding: 1rem 1.4rem;
+  }
+
+  .redirect p {
+    font-size: 1.15rem;
+  }
+}

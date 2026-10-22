@@ -336,6 +336,11 @@
   width: 100%;
   transition: transform 0.3s ease, background 0.25s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 52px;
 }
 
 .place-order-btn:disabled {
@@ -344,10 +349,31 @@
   cursor: not-allowed;
 }
 
+.place-order-btn.is-loading:disabled {
+  background: #ff7b5f;
+  opacity: 0.9;
+  cursor: wait;
+}
+
 .place-order-btn:hover:not(:disabled) {
   background: #ff6a45;
   transform: translateY(-2px);
   box-shadow: 0 16px 32px rgba(255, 123, 95, 0.4);
+}
+
+.place-order-spinner {
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: placeOrderSpin 0.7s linear infinite;
+}
+
+@keyframes placeOrderSpin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .error {
@@ -385,8 +411,53 @@
     left: 1.25rem;
   }
 
+  .checkout-page-bg-inner .back-btn .back-icon {
+    font-size: 2.6rem !important;
+  }
+
+  .checkout-page-bg-inner .place-order-text {
+    font-size: 2.4rem;
+  }
+
   .checkout-page-container {
     padding: 2.5rem 1.25rem 5rem;
     margin-top: -1.5rem;
+  }
+
+  .details-title,
+  .checkout-payment h3 {
+    font-size: 1.7rem;
+  }
+
+  .billing-label,
+  .checkout-page-left label {
+    font-size: 1.1rem;
+  }
+
+  .billing-control,
+  .credit-card-form .form-control {
+    font-size: 1.2rem;
+  }
+
+  .order-details3 p,
+  .order-details3 span {
+    font-size: 1.25rem;
+  }
+
+  .personal-details-text p {
+    font-size: 1.15rem;
+  }
+
+  .place-order-btn {
+    font-size: 1.25rem;
+    padding: 1.15rem;
+  }
+
+  .payment_methods label {
+    font-size: 1.25rem;
+  }
+
+  .payment_methods p {
+    font-size: 1.15rem;
   }
 }
