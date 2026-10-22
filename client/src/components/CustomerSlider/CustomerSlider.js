@@ -47,7 +47,7 @@ const CustomerSlider = () => {
         },
         991: {
           slidesPerView: 3,
-          spaceBetween: 48,
+          spaceBetween: 28,
           loop: true,
         },
       },
