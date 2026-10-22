@@ -281,7 +281,7 @@
 @media screen and (max-width: 600px) {
   .about-wrapper {
     min-height: auto;
-    padding: 8.5rem 1.35rem 2.75rem;
+    padding: 8.5rem 1.35rem 3.75rem;
   }
 
   .about-eyebrow {
@@ -299,7 +299,12 @@
   }
 
   .about-story {
-    padding: 4rem 0 4.5rem;
+    padding: 4rem 0 5.5rem;
+  }
+
+  .about-section-wrapper {
+    margin-bottom: 3.5rem;
+    padding-bottom: 1rem;
   }
 
   .about-story-inner {

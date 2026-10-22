@@ -22,7 +22,7 @@ const About = () => {
             <p className="about-kicker">Our story</p>
             <h2>From a small kitchen to your table</h2>
             <p>
-              What began as a street-food kitchen grew into Foodie — bold
+              What began as a street-food kitchen grew into Foodie. Bold
               flavors, quality ingredients, and food that feels like home.
             </p>
           </div>

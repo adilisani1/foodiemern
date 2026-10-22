@@ -17,7 +17,7 @@ const Menu = ({ dishes }) => {
           <p className="menu-eyebrow">Foodie</p>
           <h1 className="menu-page-title">Our menu</h1>
           <p className="menu-hero-text">
-            Bold flavors and fresh picks — choose your favorites and order in
+            Bold flavors and fresh picks. Choose your favorites and order in
             minutes.
           </p>
         </div>

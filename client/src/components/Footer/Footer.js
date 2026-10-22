@@ -15,7 +15,7 @@ const Footer = () => {
               <img src="/images/foood-logo.png" alt="Street Food" className='footer-logo' />
             </Link>
             <p className='footer-brand-text'>
-              Bold flavors, fresh ingredients, and meals made to enjoy — from our kitchen to your table.
+              Bold flavors, fresh ingredients, and meals made to enjoy from our kitchen to your table.
             </p>
             <div className='footer-social-icons'>
               <a href="https://twitter.com" className='footer-social' aria-label="Twitter" target="_blank" rel="noreferrer">

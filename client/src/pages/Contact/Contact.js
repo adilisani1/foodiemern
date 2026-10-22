@@ -70,7 +70,7 @@ const Contact = () => {
           <h1 className="contact-main-title">We're here to help</h1>
           <p className="contact-intro">
             Questions about an order, catering, or feedback? Reach us by phone,
-            email, or the form — we usually reply within a day.
+            email, or the form. We usually reply within a day.
           </p>
         </div>
 

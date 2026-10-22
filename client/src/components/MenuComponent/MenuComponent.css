@@ -5,6 +5,7 @@
   align-items: center;
   margin: 3rem 0 12rem;
   gap: 0.75rem;
+  text-align: center;
 }
 
 .menu-title {
@@ -14,6 +15,7 @@
   letter-spacing: -0.03em;
   color: #18181b;
   position: relative;
+  margin-bottom: 0.35rem;
 }
 
 .menu-title::after {
@@ -27,6 +29,17 @@
   right: 0;
   margin: 0 auto;
   border-radius: 50px;
+}
+
+.menu-subtitle {
+  font-family: var(--body);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #71717a;
+  line-height: 1.65;
+  max-width: 44ch;
+  margin: 1.6rem auto 0;
+  padding: 0 1rem;
 }
 
 .our-menu {
@@ -202,96 +215,164 @@
 }
 
 /* Promo banners */
+.promo-banners {
+  margin-top: 1rem;
+}
+
+.promo-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
 .banner {
   position: relative;
+  display: block;
   width: 100%;
-  margin-top: 1rem;
+  height: 100%;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 22px;
+  text-decoration: none;
+  color: #fff;
+  isolation: isolate;
+  transition: transform 0.3s ease;
+}
+
+.banner:hover {
+  transform: translateY(-3px);
+  color: #fff;
 }
 
 .banner::before {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(9, 9, 11, 0.55) 0%, rgba(24, 24, 27, 0.25) 100%);
+  inset: 0;
+  background:
+    linear-gradient(160deg, rgba(9, 9, 11, 0.78) 0%, rgba(9, 9, 11, 0.2) 48%, rgba(9, 9, 11, 0.55) 100%);
   z-index: 2;
-  border-radius: 18px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.banner--burger::after,
+.banner--pasta::after,
+.banner--pizza::after {
+  content: "";
+  position: absolute;
+  inset: auto auto 0 0;
+  width: 100%;
+  height: 42%;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.banner--burger::after {
+  background: linear-gradient(0deg, rgba(47, 24, 77, 0.45), transparent);
+}
+
+.banner--pasta::after {
+  background: linear-gradient(0deg, rgba(255, 123, 95, 0.28), transparent);
+}
+
+.banner--pizza::after {
+  background: linear-gradient(0deg, rgba(24, 24, 27, 0.5), transparent);
 }
 
 .discount {
   position: relative;
+  height: 100%;
+  min-height: 280px;
+}
+
+.banner--lg .discount {
+  min-height: 420px;
+}
+
+.banner--sm .discount {
+  min-height: 200px;
 }
 
 .discount-img {
   max-width: 100%;
-  border-radius: 18px;
+  border-radius: 22px;
   display: block;
   width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
 }
 
 .main-text {
   color: white;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 3;
   padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
-.main-text .big-text-title {
-  font-size: 4.2rem;
+.promo-eyebrow {
+  display: inline-block;
+  font-family: var(--body);
+  font-size: 1.1rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ff7b5f;
+  margin-bottom: 0.65rem;
+}
+
+.main-text .big-text-title,
+.main-text h3 {
+  font-size: 4rem;
   font-weight: 750;
   font-family: var(--display);
   letter-spacing: -0.03em;
+  color: #fafafa;
+  margin: 0 0 0.45rem;
+  line-height: 1.1;
 }
 
-.main-text .big-text-discount {
-  font-size: 2.4rem;
-  font-weight: 500;
-  font-family: var(--body);
-  color: #ff7b5f;
+.banner--sm .main-text h3 {
+  font-size: 2.6rem;
 }
 
-.main-text .big-week {
-  position: absolute;
-  bottom: 0;
-}
-
-.big-week .big-week-text {
-  font-size: 1.6rem;
-  font-weight: 400;
-  font-family: var(--body);
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.main-text h3 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  font-family: var(--display);
-  letter-spacing: -0.02em;
-}
-
-.main-text .week {
-  position: absolute;
-  bottom: 0;
-}
-
+.main-text .big-text-discount,
 .main-text p {
-  font-size: 1.4rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
+  font-size: 1.7rem;
+  font-weight: 500;
   font-family: var(--body);
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(250, 250, 250, 0.86);
+  margin: 0 0 1.2rem;
+  line-height: 1.35;
 }
 
-.main-text span {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #ff7b5f;
+.banner--sm .main-text p {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.promo-cta {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--body);
+  font-size: 1.25rem;
+  font-weight: 650;
+  color: #18181b;
+  background: #ff7b5f;
+  padding: 0.75rem 1.35rem;
+  border-radius: 999px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.banner:hover .promo-cta {
+  background: #ff6a45;
+  transform: translateY(-1px);
 }
 
 .center-banner-img {
@@ -396,7 +477,23 @@
 }
 
 .reviews-header .section-title-className {
-  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  width: auto;
+  margin: 0 auto 0.35rem;
+}
+
+.reviews-header .section-title-className::after {
+  width: 48px;
+  height: 3px;
+  position: absolute;
+  content: "";
+  background-color: #ff7b5f;
+  bottom: -14px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 50px;
 }
 
 .reviews-subtitle {
@@ -406,7 +503,7 @@
   color: #71717a;
   line-height: 1.65;
   max-width: 46ch;
-  margin: 0 auto;
+  margin: 3.2rem auto 2.5rem;
 }
 
 .reviews-slider {
@@ -447,29 +544,39 @@
     font-size: 2.1rem;
   }
 
+  .banner--lg .discount {
+    min-height: 340px;
+  }
+
+  .banner--sm .discount {
+    min-height: 180px;
+  }
+
   .main-text {
     padding: 1.6rem;
   }
 
-  .main-text .big-text-title {
+  .main-text .big-text-title,
+  .main-text h3 {
     font-size: 3.2rem;
   }
 
-  .main-text .big-text-discount {
-    font-size: 1.8rem;
+  .banner--sm .main-text h3 {
+    font-size: 2.2rem;
   }
 
-  .main-text h3 {
-    font-size: 2rem;
+  .main-text .big-text-discount,
+  .main-text p {
+    font-size: 1.45rem;
   }
 
-  .main-text span {
-    font-size: 1.3rem;
+  .promo-eyebrow {
+    font-size: 1rem;
   }
 
-  .main-text p,
-  .big-week .big-week-text {
-    font-size: 1.3rem;
+  .promo-cta {
+    font-size: 1.15rem;
+    padding: 0.65rem 1.2rem;
   }
 
   .banner-text h2 {
@@ -498,7 +605,7 @@
   .center-banner-img {
     height: auto;
     min-height: 0;
-    margin-top: 3.5rem;
+    margin-top: 4.5rem;
     margin-bottom: 3.5rem;
     padding: 3.5rem 0;
   }
@@ -506,11 +613,76 @@
 
 @media (max-width: 640px) {
   .menu-t {
-    margin: 1.5rem 0 6.5rem;
+    margin: 1.5rem 0 5rem;
   }
 
   .menu-title {
     font-size: 2.4rem;
+  }
+
+  .menu-subtitle {
+    font-size: 1.25rem;
+    margin-top: 1.4rem;
+    max-width: 34ch;
+  }
+
+  .our-menu {
+    padding-bottom: 3.5rem;
+  }
+
+  .promo-banners {
+    margin-bottom: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .promo-side {
+    gap: 1.15rem;
+  }
+
+  .banner {
+    border-radius: 16px;
+  }
+
+  .banner--lg .discount {
+    min-height: 240px;
+  }
+
+  .banner--sm .discount {
+    min-height: 170px;
+  }
+
+  .discount-img {
+    border-radius: 16px;
+  }
+
+  .main-text {
+    padding: 1.35rem 1.4rem;
+  }
+
+  .promo-eyebrow {
+    font-size: 0.95rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .main-text .big-text-title,
+  .main-text h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .banner--sm .main-text h3 {
+    font-size: 2rem;
+  }
+
+  .main-text .big-text-discount,
+  .main-text p {
+    font-size: 1.25rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .promo-cta {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.15rem;
   }
 
   .all-dishes {
@@ -571,46 +743,6 @@
     height: 40px;
   }
 
-  .banner {
-    margin-top: 0.75rem;
-    border-radius: 14px;
-  }
-
-  .discount-img {
-    border-radius: 14px;
-  }
-
-  .main-text {
-    padding: 1.15rem 1.25rem;
-  }
-
-  .main-text .big-text-title {
-    font-size: 2.4rem;
-    line-height: 1.15;
-  }
-
-  .main-text .big-text-discount {
-    font-size: 1.35rem;
-  }
-
-  .main-text h3 {
-    font-size: 1.7rem;
-    line-height: 1.15;
-  }
-
-  .main-text span {
-    font-size: 1.15rem;
-  }
-
-  .main-text p {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .big-week .big-week-text {
-    font-size: 1.1rem;
-  }
-
   .banner-text {
     display: flex;
     flex-direction: column;
@@ -659,27 +791,33 @@
   .center-banner-img {
     height: auto;
     min-height: 0;
-    padding: 2.75rem 0 2.25rem;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    padding: 3.25rem 0 3rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
 
   .section-title-className {
     font-size: 2.2rem;
-    margin-bottom: 0.85rem;
+  }
+
+  .reviews-header .section-title-className {
+    margin-bottom: 0.35rem;
   }
 
   .reviews-wrap {
-    margin: 3rem auto 1.25rem;
+    margin: 3.5rem auto 1.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .reviews-subtitle {
     font-size: 1.25rem;
     max-width: 34ch;
+    margin: 2.6rem auto 2rem;
     padding: 0 0.5rem;
   }
 
   .reviews-slider {
-    margin-bottom: 3.5rem;
+    margin-bottom: 4.5rem;
+    padding-bottom: 1.5rem;
   }
 }

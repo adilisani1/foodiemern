@@ -16,6 +16,9 @@ const MenuComponent = ({ dishes }) => {
 
             <div className='menu-t'>
                 <h2 className='menu-title'>Our menu</h2>
+                <p className='menu-subtitle'>
+                    Handpicked favorites made fresh. Burgers, pizzas, noodles, and more ready to order.
+                </p>
             </div>
             <section
                 className="our-menu section repeat-img" id="menu">
@@ -80,62 +83,45 @@ const MenuComponent = ({ dishes }) => {
 
 
             {/* VIP OFFER */}
-            <div className='container'>
-                <div className='row justify-content-center align-items-center'>
+            <div className='container promo-banners'>
+                <div className='row g-4 align-items-stretch'>
                     <div className='col-md-8'>
-                        <div className="banner">
-                            <div className="main-text">
-                                <h3 className='big-text-title'>BURGER</h3>
-                                <span className='big-text-discount'>Get a 20% Discount</span>
-
-                                <div className='big-week'>
-                                    <p className='big-week-text '>On This Week</p>
-                                </div>
-                                {/* <a href="#">Buy Now</a> */}
-                            </div>
-
+                        <a href="#menu" className="banner banner--lg banner--burger">
                             <div className='discount'>
-                                <img src='/images/food-img-1.png' className=' discount-img' alt='' />
+                                <img src='/images/food-img-1.png' className='discount-img' alt='Burger deal' />
                             </div>
-
-                        </div>
+                            <div className="main-text">
+                                <span className='promo-eyebrow'>This week</span>
+                                <h3 className='big-text-title'>Burger</h3>
+                                <p className='big-text-discount'>20% off smash favorites</p>
+                                <span className='promo-cta'>Order now</span>
+                            </div>
+                        </a>
                     </div>
                     <div className="col-md-4">
-                        <div className='row flex-column'>
-                            <div className="col-md-12">
-                                <div className="banner">
-                                    <div className="main-text">
-                                        <h3>BURGER</h3>
-                                        <span>Get a 20% Discount</span>
-                                        <div className='week'>
-                                            <p>On This Week</p>
-                                        </div>
-                                        {/* <a href="#">Buy Now</a> */}
-                                    </div>
-                                    <div className='discount'>
-                                        <img src='/images/food-img-2.png' className=' discount-img' alt='' />
-                                    </div>
-
+                        <div className='promo-side'>
+                            <a href="#menu" className="banner banner--sm banner--pasta">
+                                <div className='discount'>
+                                    <img src='/images/food-img-2.png' className='discount-img' alt='Pasta deal' />
                                 </div>
-                            </div>
-                            <div className="col-md-12">
-                                <div className="banner">
-                                    <div className="main-text">
-                                        <h3>BURGER</h3>
-                                        <span>Get a 20% Discount</span>
-                                        <div className='week'>
-                                            <p>On This Week</p>
-                                        </div>
-                                        {/* <a href="#">Buy Now</a> */}
-                                    </div>
-                                    <div className='discount'>
-                                        <img src='/images/food-img-3.png' className=' discount-img' alt='' />
-                                    </div>
-
+                                <div className="main-text">
+                                    <span className='promo-eyebrow'>Limited</span>
+                                    <h3>Pasta</h3>
+                                    <p>15% off bowls</p>
+                                    <span className='promo-cta'>Try it</span>
                                 </div>
-                            </div>
-
-
+                            </a>
+                            <a href="#menu" className="banner banner--sm banner--pizza">
+                                <div className='discount'>
+                                    <img src='/images/food-img-3.png' className='discount-img' alt='Pizza deal' />
+                                </div>
+                                <div className="main-text">
+                                    <span className='promo-eyebrow'>Hot deal</span>
+                                    <h3>Pizza</h3>
+                                    <p>Buy 1 get 1 side</p>
+                                    <span className='promo-cta'>Grab deal</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -148,7 +134,7 @@ const MenuComponent = ({ dishes }) => {
                         <div className='banner-text col-md-6'>
                             <h2>Get a 20% discount</h2>
                             <span>Special food every time</span>
-                            <p className='center-banner-text'>Fresh picks and bold flavors — order your favorites and enjoy a meal made for you.</p>
+                            <p className='center-banner-text'>Fresh picks and bold flavors. Order your favorites and enjoy a meal made for you.</p>
                             <div className='d-flex align-items-center flex-wrap'>
                                 <a href="#menu" className='order-now'>Order Now</a>
                                 <h3>$299.00</h3>
@@ -173,7 +159,7 @@ const MenuComponent = ({ dishes }) => {
                 </div>
             </section>
 
-            <section className="container-fluid reviews-slider">
+            <section className="reviews-slider">
                 <CustomerSlider />
             </section>
 
